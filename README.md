@@ -94,7 +94,7 @@
   <li><a href="https://youtu.be/Ts96-cdUeko" target="_blank">CRUD Operations in Morphia</a> </li>
 </ul>
 
-<h3><a href="/Week04" target="_blank">WEEK 04 - PERFORMANCE</a></h3>
+<h3><a href="#" target="_blank">WEEK 04 - PERFORMANCE</a></h3>
 <ul>
   <li><a href="https://youtu.be/GGMfM3pYK_4" target="_blank">Introduction to Week 4</a></li> 
   <li><a href="https://youtu.be/YvK7I9fYpK4" target="_blank">Storage Engines: Introduction</a></li> 
@@ -109,19 +109,19 @@
   <li><a href="https://youtu.be/ZznHByqtTMA" target="_blank">Index Creation, Sparse </a></li>
   <li><a href="https://youtu.be/AchmKNj2qhw" target="_blank">Index Creation, Background</a> </li>
   <li><a href="https://youtu.be/r5YeICVzDjQ" target="_blank">Using Explain</a> </li>
-  <li><a href="" target="_blank">Explain: Verbosity</a></li> 
-  <li><a href="" target="_blank">Covered Queries </a></li>
-  <li><a href="" target="_blank">When is an Index Used?</a> </li>
-  <li><a href="" target="_blank">How Large is Your Index?</a> </li>
-  <li><a href="" target="_blank">Number of Index Entries</a></li> 
-  <li><a href="" target="_blank">Geospatial Indexes </a></li>
-  <li><a href="" target="_blank">Geospatial Spherical </a></li>
-  <li><a href="" target="_blank">Text Indexes </a></li>
-  <li><a href="" target="_blank">Efficiency of Index Use</a></li> 
-  <li><a href="" target="_blank">Efficiency of Index Use Example </a></li>
-  <li><a href="" target="_blank">Logging Slow Queries </a></li>
-  <li><a href="" target="_blank">Profiling </a></li>
-  <li><a href="" target="_blank">Mongostat</a> </li>
-  <li><a href="" target="_blank">Mongotop</a> </li>
-  <li><a href="" target="_blank">Sharding Overview</a></li>
+  <li><a href="#" target="_blank">Explain: Verbosity</a></li> 
+  <li><a href="#" target="_blank">Covered Queries </a></li>
+  <li><a href="#" target="_blank">When is an Index Used?</a> </li>
+  <li><a href="#" target="_blank">How Large is Your Index?</a> </li>
+  <li><a href="#" target="_blank">Number of Index Entries</a></li> 
+  <li><a href="#" target="_blank">Geospatial Indexes </a></li>
+  <li><a href="#" target="_blank">Geospatial Spherical </a></li>
+  <li><a href="#" target="_blank">Text Indexes </a></li>
+  <li><a href="#" target="_blank">Efficiency of Index Use</a></li> 
+  <li><a href="#" target="_blank">Efficiency of Index Use Example </a></li>
+  <li><a href="#" target="_blank">Logging Slow Queries </a></li>
+  <li><a href="#" target="_blank">Profiling </a></li>
+  <li><a href="#" target="_blank">Mongostat</a> </li>
+  <li><a href="#" target="_blank">Mongotop</a> </li>
+  <li><a href="#" target="_blank">Sharding Overview</a></li>
 </ul>
