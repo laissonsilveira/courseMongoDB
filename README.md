@@ -109,8 +109,8 @@
   <li><a href="https://youtu.be/ZznHByqtTMA" target="_blank">Index Creation, Sparse </a></li>
   <li><a href="https://youtu.be/AchmKNj2qhw" target="_blank">Index Creation, Background</a> </li>
   <li><a href="https://youtu.be/r5YeICVzDjQ" target="_blank">Using Explain</a> </li>
-  <li><a href="#" target="_blank">Explain: Verbosity</a></li> 
-  <li><a href="#" target="_blank">Covered Queries </a></li>
+  <li><a href="https://youtu.be/WxXVun6bZ20" target="_blank">Explain: Verbosity</a></li> 
+  <li><a href="https://youtu.be/QyV79jsSJ9Y" target="_blank">Covered Queries </a></li>
   <li><a href="#" target="_blank">When is an Index Used?</a> </li>
   <li><a href="#" target="_blank">How Large is Your Index?</a> </li>
   <li><a href="#" target="_blank">Number of Index Entries</a></li> 
