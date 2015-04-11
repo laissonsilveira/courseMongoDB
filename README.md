@@ -96,19 +96,19 @@
 
 <h3>WEEK 04 - PERFORMANCE</h3>
 <ul>
-  <li><a href="" target="_blank">Introduction to Week 4</a></li> 
-  <li><a href="" target="_blank">Storage Engines: Introduction</a></li> 
-  <li><a href="" target="_blank">Storage Engines: MMAPv1</a></li> 
-  <li><a href="" target="_blank">Storage Engines: WiredTiger</a></li> 
-  <li><a href="" target="_blank">Indexes</a></li> 
-  <li><a href="" target="_blank">Creating Indexes</a></li> 
-  <li><a href="" target="_blank">Discovering (and Deleting) Indexes </a></li>
-  <li><a href="" target="_blank">Multikey Indexes </a></li>
-  <li><a href="" target="_blank">Dot Notation and Multikey</a> </li>
-  <li><a href="" target="_blank">Index Creation Option, Unique </a></li>
-  <li><a href="" target="_blank">Index Creation, Sparse </a></li>
-  <li><a href="" target="_blank">Index Creation, Background</a> </li>
-  <li><a href="" target="_blank">Using Explain</a> </li>
+  <li><a href="https://youtu.be/GGMfM3pYK_4" target="_blank">Introduction to Week 4</a></li> 
+  <li><a href="https://youtu.be/YvK7I9fYpK4" target="_blank">Storage Engines: Introduction</a></li> 
+  <li><a href="https://youtu.be/os3591KviNM" target="_blank">Storage Engines: MMAPv1</a></li> 
+  <li><a href="https://youtu.be/aNsugW7r3mM" target="_blank">Storage Engines: WiredTiger</a></li> 
+  <li><a href="https://youtu.be/U3iWPF5jP-g" target="_blank">Indexes</a></li> 
+  <li><a href="https://youtu.be/xi2gtzZez6Q" target="_blank">Creating Indexes</a></li> 
+  <li><a href="https://youtu.be/dX49IcmTrGA" target="_blank">Discovering (and Deleting) Indexes </a></li>
+  <li><a href="https://youtu.be/_NGwn_X82Dw" target="_blank">Multikey Indexes </a></li>
+  <li><a href="https://youtu.be/wT0_ktAZbBg" target="_blank">Dot Notation and Multikey</a> </li>
+  <li><a href="https://youtu.be/D-Ra5TEaaL4" target="_blank">Index Creation Option, Unique </a></li>
+  <li><a href="https://youtu.be/ZznHByqtTMA" target="_blank">Index Creation, Sparse </a></li>
+  <li><a href="https://youtu.be/AchmKNj2qhw" target="_blank">Index Creation, Background</a> </li>
+  <li><a href="https://youtu.be/r5YeICVzDjQ" target="_blank">Using Explain</a> </li>
   <li><a href="" target="_blank">Explain: Verbosity</a></li> 
   <li><a href="" target="_blank">Covered Queries </a></li>
   <li><a href="" target="_blank">When is an Index Used?</a> </li>
