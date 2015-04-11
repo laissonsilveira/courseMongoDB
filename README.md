@@ -1,127 +1,127 @@
 # courseMongoDB
-<h2>Projetos do Curso de MongoDB:
-<br><b>M101J: MONGODB FOR JAVA DEVELOPERS</b></h2>
+
+<h2>Projetos do Curso de <a href="https://www.mongodb.com"> MongoDB</a>:
+<br><b><M101J: MONGODB FOR JAVA DEVELOPERS</b></h2>
 
 <h3>WEEK 01 - INTRODUCTION</h3>
 <ul>
-  <li>Welcome to M101J</li>
-  <li>Welcome to M101J</li>
-  <li>What is MongoDB?</li>
-  <li>MongoDB Relative to Relational</li>
-  <li>Overview of Building an App with MongoDB</li>
-  <li>Quick Introduction to the Mongo Shell</li>
-  <li>Introduction to JSON</li>
-  <li>System Requirements</li> 
-  <li>Installing MongoDB (mac)</li> 
-  <li>Installing MongoDB (windows)</li> 
-  <li>Installing and Using Maven</li> 
-  <li>Intro to the Spark Web Application Framework</li> 
-  <li>Intro to the Freemarker Templating Engine</li> 
-  <li>Spark and Freemarker Together</li> 
-  <li>Spark: Handling GET requests</li> 
-  <li>Spark: Handling POST requests</li> 
-  <li>MongoDB is Schemaless</li> 
-  <li>JSON Revisited</li>
-  <li>JSON Subdocuments</li>
-  <li>JSON Spec</li> 
-  <li>Introduction to Our Class Project, The Blog</li> 
-  <li>Blog in Relational Tables</li>
-  <li>Blog in Documents</li>
-  <li>Introduction to Schema Design</li>
+  <li><a href="https://youtu.be/kTIqocKMItU"> Welcome to M101J</a></li>
+  <li><a href="https://youtu.be/Lfl8hdQOi6Y">What is MongoDB?</a></li>
+  <li><a href="https://youtu.be/-KIC1LXxcGM">MongoDB Relative to Relational</a></li>
+  <li><a href="https://youtu.be/swhH4q_2Ttc">Overview of Building an App with MongoDB</a></li>
+  <li><a href="https://youtu.be/e18vCIdQKp4">Quick Introduction to the Mongo Shell</a></li>
+  <li><a href="https://youtu.be/PTATjNSjbJ0">Introduction to JSON</a></li>
+  <li><a href="https://youtu.be/_vYz3CZwyK0">System Requirements</a></li> 
+  <li><a href="https://youtu.be/_WJ8m5QHvwc">Installing MongoDB (mac)</a></li> 
+  <li><a href="https://youtu.be/sBdaRlgb4N8">Installing MongoDB (windows)</a></li> 
+  <li><a href="https://youtu.be/ZxRRA0MsXqs">Installing and Using Maven</a></li> 
+  <li><a href="https://youtu.be/UH-VD_ypal8">Intro to the Spark Web Application Framework</a></li> 
+  <li><a href="https://youtu.be/_8-3K2Ds-Ok">Intro to the Freemarker Templating Engine</a></li> 
+  <li><a href="https://youtu.be/7fdtf9aLc2w">Spark and Freemarker Together</a></li> 
+  <li><a href="https://youtu.be/7t1IafamuVs">Spark: Handling GET requests</a></li> 
+  <li><a href="https://youtu.be/jZDuxesy5cc">Spark: Handling POST requests</a></li> 
+  <li><a href="https://youtu.be/uKB-Hoqs6zI">MongoDB is Schemaless</a></li> 
+  <li><a href="https://youtu.be/CTffxoSSLqg">JSON Revisited</a></li>
+  <li><a href="https://youtu.be/vrYAEH3g13M">JSON Subdocuments</a></li>
+  <li><a href="https://youtu.be/kOrsT94-A28">JSON Spec</a></li> 
+  <li><a href="https://youtu.be/ePi3kDoexoM">Introduction to Our Class Project, The Blog</a></li> 
+  <li><a href="https://youtu.be/vB-4AbbLKeg">Blog in Relational Table</a></li>
+  <li><a href="https://youtu.be/WJblHPsp1p4">Blog in Documents</a></li>
+  <li><a href="https://youtu.be/wiwOEG_6ojs">Introduction to Schema Design</a></li>
 </ul>
 
 <h3>WEEK 02 - CRUD</h3>
 <ul>
-  <li>Introduction to Week 2 </li>
-  <li>CRUD and the Mongo Shell</li> 
-  <li>Secrets of the Mongo Shell </li>
-  <li>BSON Introduced </li>
-  <li>Inserting Docs</li> 
-  <li>Introduction to findOne</li> 
-  <li>Introduction to find </li>
-  <li>Querying Using field Selection </li>
-  <li>Querying Using $gt and $lt</li> 
-  <li>Inequalities on Strings</li> 
-  <li>Using regexes, $exists, $type </li>
-  <li>Using $or</li> 
-  <li>Using $and</li> 
-  <li>Querying Inside Arrays</li> 
-  <li>Using $in and $all</li> 
-  <li>Queries with Dot Notation</li> 
-  <li>Querying, Cursors </li>
-  <li>Counting Results </li>
-  <li>Wholesale Updating of a Document </li>
-  <li>Using the $set Command </li>
-  <li>Using the $unset Command </li>
-  <li>Using $push, $pop, $pull, $pushAll, $pullAll, $addToSet</li> 
-  <li>Upserts </li>
-  <li>Multi-update </li>
-  <li>Removing Data </li>
-  <li>The MongoDB Java Driver</li> 
-  <li>Java Driver: Representing Documents</li> 
-  <li>Java Driver: Insert </li>
-  <li>Java Driver: Find, FindOne, and Count </li>
-  <li>Java Driver: Querying with a filter</li>
-  <li>Java Driver: Querying with a Projection </li>
-  <li>Java Driver: Querying with Sort, Skip and Limit </li>
-  <li>Java Driver: Update and Replace </li>
-  <li>Java Driver: Delete</li> 
-  <li>All Together Now: MongoDB, Spark and Freemarker </li>
-  <li>Blog, Internals</li> 
-  <li>Blog, Session Management</li> 
-  <li>Blog, User Interface</li> 
-  <li>Using MongoProc </li>
+  <li><a href="">Introduction to Week 2 </a></li>
+  <li><a href="">CRUD and the Mongo Shell</a></li> 
+  <li><a href="">Secrets of the Mongo Shell</a> </li>
+  <li><a href="">BSON Introduced </a></li>
+  <li><a href="">Inserting Docs</a></li> 
+  <li><a href="">Introduction to findOne</a></li> 
+  <li><a href="">Introduction to find </a></li>
+  <li><a href="">Querying Using field Selection</a> </li>
+  <li><a href="">Querying Using $gt and $lt</a></li> 
+  <li><a href="">Inequalities on Strings</a></li> 
+  <li><a href="">Using regexes, $exists, $type</a> </li>
+  <li><a href="">Using $or</a></li> 
+  <li><a href="">Using $and</a></li> 
+  <li><a href="">Querying Inside Arrays</a></li> 
+  <li><a href="">Using $in and $all</a></li> 
+  <li><a href="">Queries with Dot Notation√</li> 
+  <li><a href="">Querying, Cursors </a></li>
+  <li><a href="">Counting Results</a> </li>
+  <li><a href="">Wholesale Updating of a Document</a> </li>
+  <li><a href="">Using the $set Command </a></li>
+  <li><a href="">Using the $unset Command </a></li>
+  <li><a href="">Using $push, $pop, $pull, $pushAll, $pullAll, $addToSet</a></li> 
+  <li><a href="">Upserts </a></li>
+  <li><a href="">Multi-update</a> </li>
+  <li><a href="">Removing Data</a> </li>
+  <li><a href="">The MongoDB Java Driver</a></li> 
+  <li><a href="">Java Driver: Representing Documents</a></li> 
+  <li><a href="">Java Driver: Insert </a></li>
+  <li><a href="">Java Driver: Find, FindOne, and Count</a> </li>
+  <li><a href="">Java Driver: Querying with a filter</a></li>
+  <li><a href="">Java Driver: Querying with a Projection</a> </li>
+  <li><a href="">Java Driver: Querying with Sort, Skip and Limit</a> </li>
+  <li><a href="">Java Driver: Update and Replace </a></li>
+  <li><a href="">Java Driver: Delete</a></li> 
+  <li><a href="">All Together Now: MongoDB, Spark and Freemarker </a></li>
+  <li><a href="">Blog, Internals</a></li> 
+  <li><a href="">Blog, Session Management</a></li> 
+  <li><a href="">Blog, User Interface</a></li> 
+  <li><a href="">Using MongoProc </a></li>
 </ul>
 
 <h3>WEEK 03 - SCHEMA DESIGN</h3>
 <ul>
-  <li>Introduction to Week 3</li> 
-  <li>MongoDB Schema Design </li>
-  <li>Relational Normalization </li>
-  <li>Mongo Design for Blog</li> 
-  <li>Alternative Schema for Blog</li> 
-  <li>Living Without Constraints</li> 
-  <li>Living Without Transactions</li> 
-  <li>One to One Relations </li>
-  <li>One to Many Relations </li>
-  <li>Many to Many Relations</li> 
-  <li>Multikeys</li> 
-  <li>Benefits of Embedding </li>
-  <li>Trees </li>
-  <li>When to Denormalize </li>
-  <li>What is an ODM? </li>
-  <li>Field mappings, indexes and constraints in Morphia </li>
-  <li>CRUD Operations in Morphia </li>
+  <li><a href="">Introduction to Week 3</a></li> 
+  <li><a href="">MongoDB Schema Design </a></li>
+  <li><a href="">Relational Normalization</a> </li>
+  <li><a href="">Mongo Design for Blog</a></li> 
+  <li><a href="">Alternative Schema for Blog</a></li> 
+  <li><a href="">Living Without Constraints</a></li> 
+  <li><a href="">Living Without Transactions</a></li> 
+  <li><a href="">One to One Relations </a></li>
+  <li><a href="">One to Many Relations</a> </li>
+  <li><a href="">Many to Many Relations</a></li> 
+  <li><a href="">Multikeys</a></li> 
+  <li><a href="">Benefits of Embedding </a></li>
+  <li><a href="">Trees </a></li>
+  <li><a href="">When to Denormalize</a> </li>
+  <li><a href="">What is an ODM? </a></li>
+  <li><a href="">Field mappings, indexes and constraints in Morphia</a> </li>
+  <li><a href="">CRUD Operations in Morphia</a> </li>
 </ul>
 
 <h3>WEEK 04 - PERFORMANCE</h3>
 <ul>
-  <li>Introduction to Week 4</li> 
-  <li>Storage Engines: Introduction</li> 
-  <li>Storage Engines: MMAPv1</li> 
-  <li>Storage Engines: WiredTiger</li> 
-  <li>Indexes</li> 
-  <li>Creating Indexes</li> 
-  <li>Discovering (and Deleting) Indexes </li>
-  <li>Multikey Indexes </li>
-  <li>Dot Notation and Multikey </li>
-  <li>Index Creation Option, Unique </li>
-  <li>Index Creation, Sparse </li>
-  <li>Index Creation, Background </li>
-  <li>Using Explain </li>
-  <li>Explain: Verbosity</li> 
-  <li>Covered Queries </li>
-  <li>When is an Index Used? </li>
-  <li>How Large is Your Index? </li>
-  <li>Number of Index Entries</li> 
-  <li>Geospatial Indexes </li>
-  <li>Geospatial Spherical </li>
-  <li>Text Indexes </li>
-  <li>Efficiency of Index Use</li> 
-  <li>Efficiency of Index Use Example </li>
-  <li>Logging Slow Queries </li>
-  <li>Profiling </li>
-  <li>Mongostat </li>
-  <li>Mongotop </li>
-  <li>Sharding Overview</li>
+  <li><a href="">Introduction to Week 4</a></li> 
+  <li><a href="">Storage Engines: Introduction</a></li> 
+  <li><a href="">Storage Engines: MMAPv1</a></li> 
+  <li><a href="">Storage Engines: WiredTiger</a></li> 
+  <li><a href="">Indexes</a></li> 
+  <li><a href="">Creating Indexes</a></li> 
+  <li><a href="">Discovering (and Deleting) Indexes </a></li>
+  <li><a href="">Multikey Indexes </a></li>
+  <li><a href="">Dot Notation and Multikey</a> </li>
+  <li><a href="">Index Creation Option, Unique </a></li>
+  <li><a href="">Index Creation, Sparse </a></li>
+  <li><a href="">Index Creation, Background</a> </li>
+  <li><a href="">Using Explain</a> </li>
+  <li><a href="">Explain: Verbosity</a></li> 
+  <li><a href="">Covered Queries </a></li>
+  <li><a href="">When is an Index Used?</a> </li>
+  <li><a href="">How Large is Your Index?</a> </li>
+  <li><a href="">Number of Index Entries</a></li> 
+  <li><a href="">Geospatial Indexes </a></li>
+  <li><a href="">Geospatial Spherical </a></li>
+  <li><a href="">Text Indexes </a></li>
+  <li><a href="">Efficiency of Index Use</a></li> 
+  <li><a href="">Efficiency of Index Use Example </a></li>
+  <li><a href="">Logging Slow Queries </a></li>
+  <li><a href="">Profiling </a></li>
+  <li><a href="">Mongostat</a> </li>
+  <li><a href="">Mongotop</a> </li>
+  <li><a href="">Sharding Overview</a></li>
 </ul>
