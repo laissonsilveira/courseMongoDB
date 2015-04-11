@@ -25,9 +25,9 @@
   <li><a href="https://youtu.be/vrYAEH3g13M" target="_blank">JSON Subdocuments</a></li>
   <li><a href="https://youtu.be/kOrsT94-A28" target="_blank">JSON Spec</a></li> 
   <li><a href="https://youtu.be/ePi3kDoexoM" target="_blank">Introduction to Our Class Project, The Blog</a></li> 
-  <li><a href="https://youtu.be/vB-4AbbLKeg" target="_blank">Blog in Relational Table</a></li>
-  <li><a href="https://youtu.be/WJblHPsp1p4" target="_blank">Blog in Documents</a></li>
-  <li><a href="https://youtu.be/wiwOEG_6ojs" target="_blank">Introduction to Schema Design</a></li>
+  <li><a href="https://youtu.be/boR2y9MHCa0" target="_blank">Blog in Relational Table</a></li>
+  <li><a href="https://youtu.be/ZjwCzyqKVdY" target="_blank">Blog in Documents</a></li>
+  <li><a href="https://youtu.be/6XE3wZCPiZ8" target="_blank">Introduction to Schema Design</a></li>
 </ul>
 
 <h3><a href="/Week02" target="_blank">WEEK 02 - CRUD</a></h3>
