@@ -3,7 +3,7 @@
 <h2>Projetos do Curso de <a href="https://www.mongodb.com"> MongoDB</a>:
 <br><b><M101J: MONGODB FOR JAVA DEVELOPERS</b></h2>
 
-<h3>WEEK 01 - INTRODUCTION</h3>
+<h3><a href="/Week01" target="_blank">WEEK 01 - INTRODUCTION</a></h3>
 <ul>
   <li><a href="https://youtu.be/kTIqocKMItU" target="_blank"> Welcome to M101J</a></li>
   <li><a href="https://youtu.be/Lfl8hdQOi6Y" target="_blank">What is MongoDB?</a></li>
@@ -30,7 +30,7 @@
   <li><a href="https://youtu.be/wiwOEG_6ojs" target="_blank">Introduction to Schema Design</a></li>
 </ul>
 
-<h3>WEEK 02 - CRUD</h3>
+<h3><a href="/Week02" target="_blank">WEEK 02 - CRUD</a></h3>
 <ul>
   <li><a href="https://youtu.be/C-3vZ8nB7fQ" target="_blank">Introduction to Week 2 </a></li>
   <li><a href="https://youtu.be/C7LinMC2o5o" target="_blank">CRUD and the Mongo Shell</a></li> 
@@ -73,7 +73,7 @@
   <li><a href="/using_mongoproc.pdf" target="_blank">Using MongoProc </a></li>
 </ul>
 
-<h3>WEEK 03 - SCHEMA DESIGN</h3>
+<h3><a href="/Week03" target="_blank">WEEK 03 - SCHEMA DESIGN</a></h3>
 <ul>
   <li><a href="https://youtu.be/9urnY4OcuNM" target="_blank">Introduction to Week 3</a></li> 
   <li><a href="https://youtu.be/itnfWjMnQ4A" target="_blank">MongoDB Schema Design </a></li>
@@ -94,7 +94,7 @@
   <li><a href="https://youtu.be/Ts96-cdUeko" target="_blank">CRUD Operations in Morphia</a> </li>
 </ul>
 
-<h3>WEEK 04 - PERFORMANCE</h3>
+<h3><a href="/Week04" target="_blank">WEEK 04 - PERFORMANCE</a></h3>
 <ul>
   <li><a href="https://youtu.be/GGMfM3pYK_4" target="_blank">Introduction to Week 4</a></li> 
   <li><a href="https://youtu.be/YvK7I9fYpK4" target="_blank">Storage Engines: Introduction</a></li> 
