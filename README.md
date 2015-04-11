@@ -75,23 +75,23 @@
 
 <h3>WEEK 03 - SCHEMA DESIGN</h3>
 <ul>
-  <li><a href="">Introduction to Week 3</a></li> 
-  <li><a href="">MongoDB Schema Design </a></li>
-  <li><a href="">Relational Normalization</a> </li>
-  <li><a href="">Mongo Design for Blog</a></li> 
-  <li><a href="">Alternative Schema for Blog</a></li> 
-  <li><a href="">Living Without Constraints</a></li> 
-  <li><a href="">Living Without Transactions</a></li> 
-  <li><a href="">One to One Relations </a></li>
-  <li><a href="">One to Many Relations</a> </li>
-  <li><a href="">Many to Many Relations</a></li> 
-  <li><a href="">Multikeys</a></li> 
-  <li><a href="">Benefits of Embedding </a></li>
-  <li><a href="">Trees </a></li>
-  <li><a href="">When to Denormalize</a> </li>
-  <li><a href="">What is an ODM? </a></li>
-  <li><a href="">Field mappings, indexes and constraints in Morphia</a> </li>
-  <li><a href="">CRUD Operations in Morphia</a> </li>
+  <li><a href="https://youtu.be/9urnY4OcuNM">Introduction to Week 3</a></li> 
+  <li><a href="https://youtu.be/itnfWjMnQ4A">MongoDB Schema Design </a></li>
+  <li><a href="https://youtu.be/GX__f2s4hd8">Relational Normalization</a> </li>
+  <li><a href="https://youtu.be/PRylEHH5t84">Mongo Design for Blog</a></li> 
+  <li><a href="https://youtu.be/ZvqNWVWB2-o">Alternative Schema for Blog</a></li> 
+  <li><a href="https://youtu.be/YFRMkDPaams">Living Without Constraints</a></li> 
+  <li><a href="https://youtu.be/FfRr3qjRfww">Living Without Transactions</a></li> 
+  <li><a href="https://youtu.be/cCsfon0vUlQ">One to One Relations </a></li>
+  <li><a href="https://youtu.be/EIaP1KbVkUc">One to Many Relations</a> </li>
+  <li><a href="https://youtu.be/fEYYjZ7zEHc">Many to Many Relations</a></li> 
+  <li><a href="https://youtu.be/KtIY4Q1tUao">Multikeys</a></li> 
+  <li><a href="https://youtu.be/XIN0Dqht08Q">Benefits of Embedding </a></li>
+  <li><a href="https://youtu.be/lIjXyQklGWY">Trees </a></li>
+  <li><a href="https://youtu.be/jDZ-HFoJ0vg">When to Denormalize</a> </li>
+  <li><a href="https://youtu.be/pfp7sCEjWJY">What is an ODM? </a></li>
+  <li><a href="https://youtu.be/DB67UpBitM0">Field mappings, indexes and constraints in Morphia</a> </li>
+  <li><a href="https://youtu.be/Ts96-cdUeko">CRUD Operations in Morphia</a> </li>
 </ul>
 
 <h3>WEEK 04 - PERFORMANCE</h3>
