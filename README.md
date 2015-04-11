@@ -70,7 +70,7 @@
   <li><a href="https://youtu.be/VdEJQPsf7gg">Blog, Internals</a></li> 
   <li><a href="https://youtu.be/JeyNWgk6FJc">Blog, Session Management</a></li> 
   <li><a href="https://youtu.be/cKLfVZDs9FU">Blog, User Interface</a></li> 
-  <li><a href="/using_mongoproc.pages">Using MongoProc </a></li>
+  <li><a href="/using_mongoproc.pdf">Using MongoProc </a></li>
 </ul>
 
 <h3>WEEK 03 - SCHEMA DESIGN</h3>
