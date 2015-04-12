@@ -121,7 +121,7 @@
   <li><a href="https://youtu.be/g032EW67SRA" target="_blank">Efficiency of Index Use Example </a></li>
   <li><a href="https://youtu.be/aWuvC-O7Qkk" target="_blank">Logging Slow Queries </a></li>
   <li><a href="https://youtu.be/pN1Yhrup9-I" target="_blank">Profiling </a></li>
-  <li><a href="https://youtu.be/E2aDTSes3Wc" target="_blank">Mongostat</a> - <a href="/Week04" target="_blank">Files Tests</a> </li>
+  <li><a href="https://youtu.be/E2aDTSes3Wc" target="_blank">Mongostat</a> - <a href="/Week04/mongostat" target="_blank">Files Tests</a> </li>
   <li><a href="https://youtu.be/D9YLXgy7NYo" target="_blank">Mongotop</a> </li>
   <li><a href="https://youtu.be/BDxT-VZdYqc" target="_blank">Sharding Overview</a></li>
 </ul>
