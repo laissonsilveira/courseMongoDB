@@ -94,7 +94,7 @@
   <li><a href="https://youtu.be/Ts96-cdUeko" target="_blank">CRUD Operations in Morphia</a> </li>
 </ul>
 
-<h3><a href="#" target="_blank">WEEK 04 - PERFORMANCE</a></h3>
+<h3><a href="/Week04" target="_blank">WEEK 04 - PERFORMANCE</a></h3>
 <ul>
   <li><a href="https://youtu.be/GGMfM3pYK_4" target="_blank">Introduction to Week 4</a></li> 
   <li><a href="https://youtu.be/YvK7I9fYpK4" target="_blank">Storage Engines: Introduction</a></li> 
@@ -111,17 +111,17 @@
   <li><a href="https://youtu.be/r5YeICVzDjQ" target="_blank">Using Explain</a> </li>
   <li><a href="https://youtu.be/WxXVun6bZ20" target="_blank">Explain: Verbosity</a></li> 
   <li><a href="https://youtu.be/QyV79jsSJ9Y" target="_blank">Covered Queries </a></li>
-  <li><a href="#" target="_blank">When is an Index Used?</a> </li>
-  <li><a href="#" target="_blank">How Large is Your Index?</a> </li>
-  <li><a href="#" target="_blank">Number of Index Entries</a></li> 
-  <li><a href="#" target="_blank">Geospatial Indexes </a></li>
-  <li><a href="#" target="_blank">Geospatial Spherical </a></li>
-  <li><a href="#" target="_blank">Text Indexes </a></li>
-  <li><a href="#" target="_blank">Efficiency of Index Use</a></li> 
-  <li><a href="#" target="_blank">Efficiency of Index Use Example </a></li>
-  <li><a href="#" target="_blank">Logging Slow Queries </a></li>
-  <li><a href="#" target="_blank">Profiling </a></li>
-  <li><a href="#" target="_blank">Mongostat</a> </li>
-  <li><a href="#" target="_blank">Mongotop</a> </li>
-  <li><a href="#" target="_blank">Sharding Overview</a></li>
+  <li><a href="https://youtu.be/JyQlxDc549c" target="_blank">When is an Index Used?</a> </li>
+  <li><a href="https://youtu.be/wjA0eo_lihg" target="_blank">How Large is Your Index?</a> </li>
+  <li><a href="https://youtu.be/xiujksUfzUA" target="_blank">Number of Index Entries</a></li> 
+  <li><a href="https://youtu.be/UKUDYqNVL6I" target="_blank">Geospatial Indexes </a></li>
+  <li><a href="https://youtu.be/pULU4DVsUWQ" target="_blank">Geospatial Spherical </a></li>
+  <li><a href="https://youtu.be/nLau5Fx9LC8" target="_blank">Text Indexes </a></li>
+  <li><a href="https://youtu.be/JJmIf0pn100" target="_blank">Efficiency of Index Use</a></li> 
+  <li><a href="https://youtu.be/g032EW67SRA" target="_blank">Efficiency of Index Use Example </a></li>
+  <li><a href="https://youtu.be/aWuvC-O7Qkk" target="_blank">Logging Slow Queries </a></li>
+  <li><a href="https://youtu.be/pN1Yhrup9-I" target="_blank">Profiling </a></li>
+  <li><a href="https://youtu.be/E2aDTSes3Wc" target="_blank">Mongostat</a> - <a href="/Week04" target="_blank">Files Tests</a> </li>
+  <li><a href="https://youtu.be/D9YLXgy7NYo" target="_blank">Mongotop</a> </li>
+  <li><a href="https://youtu.be/BDxT-VZdYqc" target="_blank">Sharding Overview</a></li>
 </ul>
