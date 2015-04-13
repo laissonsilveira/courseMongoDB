@@ -1,0 +1,5 @@
+Comando usados para executar o homework com sucesso
+
+db.posts.createIndex({date:-1});
+db.posts.createIndex({tags:1});
+db.posts.createIndex({permalink:1});
