@@ -1,1 +1,1 @@
-<a href="/courseMongoDB">Go back to homepage</a>
+<a href="../../../README.md">Go back to homepage</a>
