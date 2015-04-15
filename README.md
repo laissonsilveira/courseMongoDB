@@ -154,3 +154,9 @@
   <li><a href="" target="_blank">Limitations of the Aggregation Framework</a></li>
   <li><a href="" target="_blank">Aggregation Framework with the Java Driver </a></li>
 </ul>
+
+<h3>WEEK 06 - APPLICATION ENGINEERING</h3>
+
+<h3>WEEK 07 - CASE STUDIES</h3>
+
+<h3>FINAL EXAM</h3>
