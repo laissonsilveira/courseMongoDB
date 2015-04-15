@@ -3,7 +3,7 @@
 <h2>Projetos do Curso de <a href="https://www.mongodb.com"> MongoDB</a>:
 <br><b><M101J: MONGODB FOR JAVA DEVELOPERS</b></h2>
 
-<h3><a href="/Week01" target="_blank">WEEK 01 - INTRODUCTION</a></h3>
+<h3><a href="/Week01">WEEK 01 - INTRODUCTION</a></h3>
 <ul>
   <li><a href="https://youtu.be/kTIqocKMItU" target="_blank"> Welcome to M101J</a></li>
   <li><a href="https://youtu.be/Lfl8hdQOi6Y" target="_blank">What is MongoDB?</a></li>
@@ -30,7 +30,7 @@
   <li><a href="https://youtu.be/6XE3wZCPiZ8" target="_blank">Introduction to Schema Design</a></li>
 </ul>
 
-<h3><a href="/Week02" target="_blank">WEEK 02 - CRUD</a></h3>
+<h3><a href="/Week02">WEEK 02 - CRUD</a></h3>
 <ul>
   <li><a href="https://youtu.be/C-3vZ8nB7fQ" target="_blank">Introduction to Week 2 </a></li>
   <li><a href="https://youtu.be/C7LinMC2o5o" target="_blank">CRUD and the Mongo Shell</a></li> 
@@ -73,7 +73,7 @@
   <li><a href="/using_mongoproc.pdf" target="_blank">Using MongoProc </a></li>
 </ul>
 
-<h3><a href="/Week03" target="_blank">WEEK 03 - SCHEMA DESIGN</a></h3>
+<h3><a href="/Week03">WEEK 03 - SCHEMA DESIGN</a></h3>
 <ul>
   <li><a href="https://youtu.be/9urnY4OcuNM" target="_blank">Introduction to Week 3</a></li> 
   <li><a href="https://youtu.be/itnfWjMnQ4A" target="_blank">MongoDB Schema Design </a></li>
@@ -94,7 +94,7 @@
   <li><a href="https://youtu.be/Ts96-cdUeko" target="_blank">CRUD Operations in Morphia</a> </li>
 </ul>
 
-<h3><a href="/Week04" target="_blank">WEEK 04 - PERFORMANCE</a></h3>
+<h3><a href="/Week04">WEEK 04 - PERFORMANCE</a></h3>
 <ul>
   <li><a href="https://youtu.be/GGMfM3pYK_4" target="_blank">Introduction to Week 4</a></li> 
   <li><a href="https://youtu.be/YvK7I9fYpK4" target="_blank">Storage Engines: Introduction</a></li> 
@@ -124,4 +124,33 @@
   <li><a href="https://youtu.be/E2aDTSes3Wc" target="_blank">Mongostat</a> - <a href="/Week04/mongostat" target="_blank">Files Tests</a> </li>
   <li><a href="https://youtu.be/D9YLXgy7NYo" target="_blank">Mongotop</a> </li>
   <li><a href="https://youtu.be/BDxT-VZdYqc" target="_blank">Sharding Overview</a></li>
+</ul>
+
+<h3><a href="/Week05">WEEK 05 - AGGREGATION FRAMEWORK</a></h3>
+<ul>
+  <li><a href="https://youtu.be/EaEIHm3CMQM" target="_blank">Introduction to Week 5</a></li>
+  <li><a href="" target="_blank">Simple Aggregation Example</a></li> 
+  <li><a href="" target="_blank">The Aggregation Pipeline</a></li> 
+  <li><a href="" target="_blank">Simple Example Expanded</a></li> 
+  <li><a href="" target="_blank">Compound Grouping</a></li> 
+  <li><a href="" target="_blank">Using a document for _id</a></li> 
+  <li><a href="" target="_blank">Aggregation Expressions</a></li>
+  <li><a href="" target="_blank">Using $sum</a></li>
+  <li><a href="" target="_blank">Using $avg</a></li>
+  <li><a href="" target="_blank">Using $addToSet</a></li>
+  <li><a href="" target="_blank">Using $push </a></li>
+  <li><a href="" target="_blank">Using $max and $min </a></li> 
+  <li><a href="" target="_blank">Double $group stages</a></li> 
+  <li><a href="" target="_blank">Using $project</a></li> 
+  <li><a href="" target="_blank">Using $match</a></li> 
+  <li><a href="" target="_blank">Using $sort</a></li>
+  <li><a href="" target="_blank">Using $limit and $skip</a></li>
+  <li><a href="" target="_blank">Revisiting $first and $last </a></li>
+  <li><a href="" target="_blank">Using $unwind</a></li>
+  <li><a href="" target="_blank">$unwind example</a></li>
+  <li><a href="" target="_blank">Double $unwind</a></li>
+  <li><a href="" target="_blank">Mapping between SQL and Aggregation</a></li>
+  <li><a href="" target="_blank">Some Common SQL examples</a></li>
+  <li><a href="" target="_blank">Limitations of the Aggregation Framework</a></li>
+  <li><a href="" target="_blank">Aggregation Framework with the Java Driver </a></li>
 </ul>
