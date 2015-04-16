@@ -7,14 +7,14 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>M101J</name>
+    <name>Week 01</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
       <dependency>
         <groupId>com.sparkjava</groupId>
-	<artifactId>spark-core</artifactId>
-	<version>1.1.1</version>
+		<artifactId>spark-core</artifactId>
+		<version>1.1.1</version>
       </dependency>
       
       <dependency>
