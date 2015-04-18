@@ -36,19 +36,19 @@ public class AggregationAddToSet {
 	System.out.println("--- Query AddToSet: groupby City, addToSet zip-codes ---");
 
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$group", //
-			new Document("_id", "$city")//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$group", //
+					new Document("_id", "$city")//
 				.append("postal_codes", //
 					new Document("$addToSet", "$_id")//
+				)//
 					)//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+				)//
+			).into(new ArrayList<Document>());
 
-	for (Document productAggregate : results) {
-	    printJson(productAggregate, false);
+	for (Document zipAggregate : results) {
+	    printJson(zipAggregate, false);
 	}
     }
 

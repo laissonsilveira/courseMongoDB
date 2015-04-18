@@ -36,19 +36,19 @@ public class AggregationSUM {
 	System.out.println("--- Query SUM: groupby State, sum Pop ---");
 
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$group", //
-			new Document("_id", "$state")//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$group", //
+					new Document("_id", "$state")//
 				.append("sum_population", //
 					new Document("$sum", "$pop")//
+				)//
 					)//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+				)//
+			).into(new ArrayList<Document>());
 
-	for (Document productAggregate : results) {
-	    printJson(productAggregate, false);
+	for (Document zipAggregate : results) {
+	    printJson(zipAggregate, false);
 	}
     }
 

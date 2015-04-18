@@ -36,19 +36,19 @@ public class AggregationAVG {
 	System.out.println("--- Query AVG: groupby State, avg Pop ---");
 
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$group", //
-			new Document("_id", "$state")//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$group", //
+					new Document("_id", "$state")//
 				.append("avg_population", //
 					new Document("$avg", "$pop")//
+				)//
 					)//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+				)//
+			).into(new ArrayList<Document>());
 
-	for (Document productAggregate : results) {
-	    printJson(productAggregate, false);
+	for (Document zipAggregate : results) {
+	    printJson(zipAggregate, false);
 	}
     }
 
