@@ -9,7 +9,7 @@ import org.bson.json.JsonWriterSettings;
 
 import com.mongodb.client.MongoCollection;
 
-public class AggregationSUM {
+public class AggregationAVG {
 
     /**
      * resources\zips.json
@@ -19,13 +19,13 @@ public class AggregationSUM {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	System.out.println("--- Query SUM: groupby State, sum Pop ---");
+	System.out.println("--- Query AVG: groupby State, avg Pop ---");
 	querySUM();
     }
 
     /**
      * db.zips.aggregate([{$group:{'_id':'$state',
-     * population:{'$sum':'$pop'}}}]);
+     * population:{'$avg':'$pop'}}}]);
      */
     private static void querySUM() {
 	List<Document> results = //
@@ -33,8 +33,8 @@ public class AggregationSUM {
 		Arrays.asList(//
 		new Document("$group", //
 			new Document("_id", "$state")//
-				.append("sum_population", //
-					new Document("$sum", "$pop")//
+				.append("avg_population", //
+					new Document("$avg", "$pop")//
 					)//
 		)//
 		)//
