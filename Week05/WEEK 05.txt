@@ -187,3 +187,38 @@ Lecture 10 - $addToSet
 		Again the collection will be called zips. You can deduce what your result column names should be from the above output. (ignore the issue that a city may have the same name in two different states and is in fact two different cities in that case - for eg Springfield, MO and Springfield, MA)
 
 		R: db.zips.aggregate([{$group:{"_id":"$city", "postal_codes":{"$addToSet":"$_id"}}}]);
+
+Lecture 11 - $addToSet
+
+	Ex: db.products.aggregate([
+			{ $group:{
+					_id: {
+							"marker":"$manufacturer"
+						},
+					categories:{
+							$push:"$category"
+						}
+				}
+			}
+		])
+
+	QUIZ: 
+		Given the zipcode dataset (explained more fully in the using $sum quiz) that has documents that look like this:
+		> db.zips.findOne()
+			{
+				"city" : "ACMAR",
+				"loc" : [
+					-86.51557,
+					33.584132
+				],
+				"pop" : 6055,
+				"state" : "AL",
+				"_id" : "35004"
+			}
+
+		would you expect the following two queries to produce the same result or different results?
+			db.zips.aggregate([{"$group":{"_id":"$city", "postal_codes":{"$push":"$_id"}}}])
+			db.zips.aggregate([{"$group":{"_id":"$city", "postal_codes":{"$addToSet":"$_id"}}}])
+
+		- Same result √ - porque o _id é único, não vai repetir
+		- Different Result

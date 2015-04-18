@@ -1,7 +1,5 @@
 package com.mongodb.laisson;
 
-import static com.mongodb.laisson.util.HelperJson.printJson;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +14,7 @@ import com.mongodb.laisson.util.ConnectionBase;
  *         laisson.r.silveira@gmail.com
  *         Apr 18, 2015
  */
-public class AggregationAVG {
+public class AggregationPush {
 
     /**
      * resources\zips.json
@@ -26,31 +24,35 @@ public class AggregationAVG {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryAVG();
+	queryPush();
     }
 
     /**
-     * db.zips.aggregate([{$group:{'_id':'$state', population:{'$avg':'$pop'}}}]);
+     * db.zips.aggregate([{$group:{"_id":"$state", "cityes":{"$push":"$_city"}}}]);
      */
-    private static void queryAVG() {
+    @SuppressWarnings("unchecked")
+    private static void queryPush() {
 
 	List<Document> results = //
 		zips.aggregate(//
 			Arrays.asList(//
 				new Document("$group", //
 					new Document("_id", "$state")//
-				.append("avg_population", //
-					new Document("$avg", "$pop")//
-				)//
+				.append("cityes", //
+					new Document("$push", "$city")//
+					)//
 					)//
 				)//
 			).into(new ArrayList<Document>());
 
-	System.out.println("--- Query AVG: groupby State, avg Pop ---");
-	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', population:{'$avg':'$pop'}}}]);\n");
+	System.out.println("--- Query Push: groupby State, push city ---");
+	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', 'cityes':{'$push':'$_city'}}}]);\n");
 	for (Document zipAggregate : results) {
-	    printJson(zipAggregate, false);
-	}
-    }
+	    List<String> cityes = (List<String>) zipAggregate.get("cityes");
+	    System.out.println("State: [" + zipAggregate.getString("_id") + "]: " + cityes.size());
 
+	    // printJson(zipAggregate, false);
+	}
+
+    }
 }

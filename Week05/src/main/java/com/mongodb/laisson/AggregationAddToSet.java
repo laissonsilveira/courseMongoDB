@@ -1,7 +1,5 @@
 package com.mongodb.laisson;
 
-import static com.mongodb.laisson.util.HelperJson.printJson;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,25 +28,30 @@ public class AggregationAddToSet {
     }
 
     /**
-     * db.zips.aggregate([{$group:{"_id":"$city", "postal_codes":{"$addToSet":"$_id"}}}]);
+     * db.zips.aggregate([{$group:{"_id":"$state", "cityes":{"$addToSet":"$_id"}}}]);
      */
+    @SuppressWarnings("unchecked")
     private static void queryAddToSet() {
-	System.out.println("--- Query AddToSet: groupby City, addToSet zip-codes ---");
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$city")//
-				.append("postal_codes", //
-					new Document("$addToSet", "$_id")//
-				)//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
+				.append("cityes", //
+					new Document("$addToSet", "$city")//
 					)//
-				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
+	System.out.println("--- Query AddToSet: groupby State, addToSet city ---");
+	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', 'cityes':{'$addToSet':'$_city'}}}]);\n");
 	for (Document zipAggregate : results) {
-	    printJson(zipAggregate, false);
+	    List<String> cityes = (List<String>) zipAggregate.get("cityes");
+	    System.out.println("State: [" + zipAggregate.getString("_id") + "]: " + cityes.size());
+
+	    // printJson(zipAggregate, false);
 	}
     }
 
