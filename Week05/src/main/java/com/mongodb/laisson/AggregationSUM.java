@@ -1,14 +1,21 @@
 package com.mongodb.laisson;
 
+import static com.mongodb.laisson.util.HelperJson.printJson;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.bson.Document;
-import org.bson.json.JsonWriterSettings;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.laisson.util.ConnectionBase;
 
+/**
+ * @author Laisson R. Silveira
+ *         laisson.r.silveira@gmail.com
+ *         Apr 18, 2015
+ */
 public class AggregationSUM {
 
     /**
@@ -24,8 +31,7 @@ public class AggregationSUM {
     }
 
     /**
-     * db.zips.aggregate([{$group:{'_id':'$state',
-     * population:{'$sum':'$pop'}}}]);
+     * db.zips.aggregate([{$group:{'_id':'$state', population:{'$sum':'$pop'}}}]);
      */
     private static void querySUM() {
 	List<Document> results = //
@@ -41,8 +47,7 @@ public class AggregationSUM {
 	).into(new ArrayList<Document>());
 
 	for (Document productAggregate : results) {
-	    System.out.println(productAggregate.toJson(new JsonWriterSettings(
-		    true)));
+	    printJson(productAggregate);
 	}
     }
 

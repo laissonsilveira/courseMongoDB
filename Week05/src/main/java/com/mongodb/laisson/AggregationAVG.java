@@ -1,14 +1,21 @@
 package com.mongodb.laisson;
 
+import static com.mongodb.laisson.util.HelperJson.printJson;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.bson.Document;
-import org.bson.json.JsonWriterSettings;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.laisson.util.ConnectionBase;
 
+/**
+ * @author Laisson R. Silveira
+ *         laisson.r.silveira@gmail.com
+ *         Apr 18, 2015
+ */
 public class AggregationAVG {
 
     /**
@@ -24,25 +31,23 @@ public class AggregationAVG {
     }
 
     /**
-     * db.zips.aggregate([{$group:{'_id':'$state',
-     * population:{'$avg':'$pop'}}}]);
+     * db.zips.aggregate([{$group:{'_id':'$state', population:{'$avg':'$pop'}}}]);
      */
     private static void querySUM() {
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$group", //
-			new Document("_id", "$state")//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$group", //
+					new Document("_id", "$state")//
 				.append("avg_population", //
 					new Document("$avg", "$pop")//
+				)//
 					)//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+				)//
+			).into(new ArrayList<Document>());
 
 	for (Document productAggregate : results) {
-	    System.out.println(productAggregate.toJson(new JsonWriterSettings(
-		    true)));
+	    printJson(productAggregate);
 	}
     }
 
