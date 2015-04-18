@@ -16,7 +16,7 @@ import com.mongodb.laisson.util.ConnectionBase;
  *         laisson.r.silveira@gmail.com
  *         Apr 18, 2015
  */
-public class AggregationSUM {
+public class AggregationAddToSet {
 
     /**
      * resources\zips.json
@@ -26,22 +26,22 @@ public class AggregationSUM {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	querySUM();
+	queryAddToSet();
     }
 
     /**
-     * db.zips.aggregate([{$group:{'_id':'$state', population:{'$sum':'$pop'}}}]);
+     * db.zips.aggregate([{$group:{"_id":"$city", "postal_codes":{"$addToSet":"$_id"}}}]);
      */
-    private static void querySUM() {
-	System.out.println("--- Query SUM: groupby State, sum Pop ---");
+    private static void queryAddToSet() {
+	System.out.println("--- Query AddToSet: groupby City, addToSet zip-codes ---");
 
 	List<Document> results = //
 	zips.aggregate(//
 		Arrays.asList(//
 		new Document("$group", //
-			new Document("_id", "$state")//
-				.append("sum_population", //
-					new Document("$sum", "$pop")//
+			new Document("_id", "$city")//
+				.append("postal_codes", //
+					new Document("$addToSet", "$_id")//
 					)//
 		)//
 		)//

@@ -11,8 +11,8 @@ import org.bson.json.JsonWriterSettings;
 
 public class HelperJson {
 
-    public static void printJson(Document document) {
-	JsonWriter jsonWriter = new JsonWriter(new StringWriter(), new JsonWriterSettings(JsonMode.SHELL, true));
+    public static void printJson(Document document, boolean indent) {
+	JsonWriter jsonWriter = new JsonWriter(new StringWriter(), new JsonWriterSettings(JsonMode.SHELL, indent));
 	new DocumentCodec().encode(jsonWriter, document, EncoderContext.builder().isEncodingCollectibleDocument(true).build());
 	System.out.println(jsonWriter.getWriter());
 	System.out.flush();

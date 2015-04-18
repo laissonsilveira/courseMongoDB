@@ -26,28 +26,29 @@ public class AggregationAVG {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	System.out.println("--- Query AVG: groupby State, avg Pop ---");
-	querySUM();
+	queryAVG();
     }
 
     /**
      * db.zips.aggregate([{$group:{'_id':'$state', population:{'$avg':'$pop'}}}]);
      */
-    private static void querySUM() {
+    private static void queryAVG() {
+	System.out.println("--- Query AVG: groupby State, avg Pop ---");
+
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
 				.append("avg_population", //
 					new Document("$avg", "$pop")//
-				)//
 					)//
-				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
 	for (Document productAggregate : results) {
-	    printJson(productAggregate);
+	    printJson(productAggregate, false);
 	}
     }
 

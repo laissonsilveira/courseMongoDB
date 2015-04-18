@@ -143,7 +143,7 @@ Lecture 08 - $sum
 						}
 				}
 			}
-		])
+		]);
 
 	QUIZ: 
 		Write an aggregation query to sum up the population (pop) by state and put the result in a field called population. Don't use a compound _id key (you don't need one and the quiz checker is not expecting one). The collection name is zips. so something along the lines of db.zips.aggregate...
@@ -162,4 +162,28 @@ Lecture 09 - $avg
 						}
 				}
 			}
+		]);
+
+	QUIZ:
+		Given population data by zip code (postal code), write an aggregation expression to calculate the average population of a zip code (postal code) by state. This dataset only contains four states, and only 50 zip codes per state, because some browsers have trouble working with large data sets.
+
+		R: db.zips.aggregate([{$group:{'_id':'$state', population:{'$avg':'$pop'}}}]);
+
+Lecture 10 - $addToSet
+
+	Ex: db.products.aggregate([
+			{ $group:{
+					_id: {
+							"marker":"$manufacturer"
+						},
+					categories:{
+							$addToSet:"$category"
+						}
+				}
+			}
 		])
+
+	QUIZ: 
+		Again the collection will be called zips. You can deduce what your result column names should be from the above output. (ignore the issue that a city may have the same name in two different states and is in fact two different cities in that case - for eg Springfield, MO and Springfield, MA)
+
+		R: db.zips.aggregate([{$group:{"_id":"$city", "postal_codes":{"$addToSet":"$_id"}}}]);

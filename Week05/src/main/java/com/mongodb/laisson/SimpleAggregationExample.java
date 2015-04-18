@@ -34,7 +34,7 @@ public class SimpleAggregationExample {
 
     private static void findAllProducts() {
 	for (Document product : products.find()) {
-	    printJson(product);
+	    printJson(product, true);
 	}
     }
 
@@ -44,19 +44,19 @@ public class SimpleAggregationExample {
      */
     private static void queryCountProdutsGroupByManufacturer() {
 	List<Document> results = //
-		products.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$manufacturer")//
+	products.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$manufacturer")//
 				.append("num_products", //
 					new Document("$sum", 1)//
-					)//
-					)//
 				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
 	for (Document productAggregate : results) {
-	    printJson(productAggregate);
+	    printJson(productAggregate, true);
 	}
     }
 
@@ -66,22 +66,22 @@ public class SimpleAggregationExample {
      */
     private static void queryCountProdutsGroupByManufacturerAndCategory() {
 	List<Document> results = //
-		products.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", //
-						new Document("manufacturer", "$manufacturer")//
+	products.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", //
+				new Document("manufacturer", "$manufacturer")//
 					.append("category", "$category")//
-						)//
-				.append("num_products", //
-					new Document("$sum", 1)//
-					)//
-					)//
-				)//
-			).into(new ArrayList<Document>());
+			)//
+			.append("num_products", //
+				new Document("$sum", 1)//
+			)//
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
 	for (Document productAggregate : results) {
-	    printJson(productAggregate);
+	    printJson(productAggregate, true);
 	}
     }
 
