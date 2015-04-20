@@ -1,5 +1,7 @@
 package com.mongodb.laisson;
 
+import static com.mongodb.laisson.util.HelperJson.printJson;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,11 +12,12 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.laisson.util.ConnectionBase;
 
 /**
+ * 
  * @author Laisson R. Silveira
  *         laisson.r.silveira@gmail.com
- *         Apr 18, 2015
+ *         Apr 19, 2015
  */
-public class AggregationAddToSet {
+public class AggregationMAX {
 
     /**
      * resources\zips.json
@@ -24,35 +27,31 @@ public class AggregationAddToSet {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryAddToSet();
+	queryMin();
     }
 
     /**
-     * db.zips.aggregate([{$group:{"_id":"$state", "cityes":{"$addToSet":"$_id"}}}]);
+     * db.zips.aggregate([{$group:{_id:"$state", max_pop:{$max:"$pop"}}}]);
      */
-    @SuppressWarnings("unchecked")
-    private static void queryAddToSet() {
+    private static void queryMin() {
 
 	List<Document> results = //
 	zips.aggregate(//
 		Arrays.asList(//
 		new Document("$group", //
 			new Document("_id", "$state")//
-				.append("cityes", //
-					new Document("$addToSet", "$city")//
-					)//
+				.append("max_pop", //
+					new Document("$max", "$pop")//
+				)//
 		)//
 		)//
 	).into(new ArrayList<Document>());
 
-	System.out.println("--- Query AddToSet: groupby State, addToSet city ---");
-	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', 'cityes':{'$addToSet':'$_city'}}}]);\n");
+	System.out.println("--- Query Push: groupby State, máx Population ---");
+	System.out.println("db.zips.aggregate([{$group:{_id:'$state', max_pop:{$max:'$pop'}}}]);\n");
 	for (Document zipAggregate : results) {
-	    List<String> cityes = (List<String>) zipAggregate.get("cityes");
-	    System.out.println("State: [" + zipAggregate.getString("_id") + "]: " + cityes.size());
-
-	    // printJson(zipAggregate, false);
+	    printJson(zipAggregate, false);
 	}
-    }
 
+    }
 }

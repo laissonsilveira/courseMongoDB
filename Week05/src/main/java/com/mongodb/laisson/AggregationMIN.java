@@ -17,7 +17,7 @@ import com.mongodb.laisson.util.ConnectionBase;
  *         laisson.r.silveira@gmail.com
  *         Apr 19, 2015
  */
-public class AggregationMin {
+public class AggregationMIN {
 
     /**
      * resources\zips.json

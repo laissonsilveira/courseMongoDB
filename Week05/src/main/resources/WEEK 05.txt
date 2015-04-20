@@ -279,4 +279,74 @@ Lecture 12 - $max and $min
 
 -----------------------------------------------------------------------------------
 
+Lecture 13 - $group stages
 
+	Single group
+
+		MONGO:
+			db.grades.aggregate([  
+			    {  
+			        '$group':{  
+			            _id:{  
+			                class_id:"$class_id",
+			                student_id:"$student_id"
+			            },
+			            'average':{  
+			                "$avg":"$score"
+			            }
+			        }
+			    }
+			])
+
+	Double group
+
+		MONGO:
+			db.grades.aggregate([  
+			    {  
+			        '$group':{  
+			            _id:{  
+			                class_id:"$class_id",
+			                student_id:"$student_id"
+			            },
+			            'average':{  
+			                "$avg":"$score"
+			            }
+			        }
+			    },
+			    {  
+			        '$group':{  
+			            _id:"$_id.class_id",
+			            'average':{  
+			                "$avg":"$average"
+			            }
+			        }
+			    }
+			]);
+
+	QUIZ:
+		Given the following collection:
+		> db.fun.find()
+			{ "_id" : 0, "a" : 0, "b" : 0, "c" : 21 }
+			{ "_id" : 1, "a" : 0, "b" : 0, "c" : 54 }
+			{ "_id" : 2, "a" : 0, "b" : 1, "c" : 52 }
+			{ "_id" : 3, "a" : 0, "b" : 1, "c" : 17 }
+			{ "_id" : 4, "a" : 1, "b" : 0, "c" : 22 }
+			{ "_id" : 5, "a" : 1, "b" : 0, "c" : 5 }
+			{ "_id" : 6, "a" : 1, "b" : 1, "c" : 87 }
+			{ "_id" : 7, "a" : 1, "b" : 1, "c" : 97 }
+
+		And the following aggregation query
+		db.fun.aggregate([{$group:{_id:{a:"$a", b:"$b"}, c:{$max:"$c"}}}, {$group:{_id:"$_id.a", c:{$min:"$c"}}}]);
+		What values are returned?
+
+		R:
+			17 and 54
+			97 and 21
+			54 and 5
+			52 and 22 - √: no primeiro agrupamento vai pegar o maior de 'C' (0,0=54),(0,1=52),(1,0=22),(1,1=97)
+						   no segundo agrupamento vai pegar o menor de cada grupo (0=52,54) e (1=22,97)
+						   pegando o menor de 0=52 e 1=22
+						   { "_id" : 0, "c" : 52 }
+						   { "_id" : 1, "c" : 22 }
+
+-----------------------------------------------------------------------------------

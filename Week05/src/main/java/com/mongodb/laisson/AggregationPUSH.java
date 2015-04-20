@@ -14,7 +14,7 @@ import com.mongodb.laisson.util.ConnectionBase;
  *         laisson.r.silveira@gmail.com
  *         Apr 18, 2015
  */
-public class AggregationPush {
+public class AggregationPUSH {
 
     /**
      * resources\zips.json
