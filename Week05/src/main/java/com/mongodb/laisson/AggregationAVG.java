@@ -35,18 +35,18 @@ public class AggregationAVG {
     private static void queryAVG() {
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
 				.append("avg_population", //
 					new Document("$avg", "$pop")//
-				)//
 					)//
-				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
-	System.out.println("--- Query AVG: groupby State, avg Pop ---");
+	System.out.println("--- Query $avg: groupby State, avg Pop ---");
 	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', population:{'$avg':'$pop'}}}]);\n");
 	for (Document zipAggregate : results) {
 	    printJson(zipAggregate, false);

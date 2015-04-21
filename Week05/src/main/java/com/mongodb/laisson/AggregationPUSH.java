@@ -34,18 +34,18 @@ public class AggregationPUSH {
     private static void queryPush() {
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
 				.append("cityes", //
 					new Document("$push", "$city")//
-					)//
-					)//
 				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
-	System.out.println("--- Query Push: groupby State, push city ---");
+	System.out.println("--- Query $push: groupby State, push city ---");
 	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', 'cityes':{'$push':'$_city'}}}]);\n");
 	for (Document zipAggregate : results) {
 	    List<String> cityes = (List<String>) zipAggregate.get("cityes");

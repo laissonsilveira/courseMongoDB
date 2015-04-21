@@ -36,18 +36,18 @@ public class AggregationMIN {
     private static void queryMin() {
 
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$group", //
-			new Document("_id", "$state")//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$group", //
+					new Document("_id", "$state")//
 				.append("max_pop", //
 					new Document("$min", "$pop")//
+					)//
+					)//
 				)//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+			).into(new ArrayList<Document>());
 
-	System.out.println("--- Query Push: groupby State, min Population ---");
+	System.out.println("--- Query $min: groupby State, min Population ---");
 	System.out.println("db.zips.aggregate([{$group:{_id:'$state', max_pop:{$min:'$pop'}}}]);\n");
 	for (Document zipAggregate : results) {
 	    printJson(zipAggregate, false);

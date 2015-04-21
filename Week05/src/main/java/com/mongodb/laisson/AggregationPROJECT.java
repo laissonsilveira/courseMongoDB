@@ -15,9 +15,9 @@ import com.mongodb.laisson.util.ConnectionBase;
  * 
  * @author Laisson R. Silveira
  *         laisson.r.silveira@gmail.com
- *         Apr 19, 2015
+ *         Apr 20, 2015
  */
-public class AggregationMAX {
+public class AggregationPROJECT {
 
     /**
      * resources\zips.json
@@ -27,28 +27,31 @@ public class AggregationMAX {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryMin();
+	queryProject();
     }
 
     /**
-     * db.zips.aggregate([{$group:{_id:"$state", max_pop:{$max:"$pop"}}}]);
+     * db.zips.aggregate([{$project:{_id:0,'city':{$toLower:'$city'},pop:1,state:1,'zip':'$_id'}}]);
      */
-    private static void queryMin() {
+    private static void queryProject() {
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
-				.append("max_pop", //
-					new Document("$max", "$pop")//
-					)//
-					)//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$project", //
+			new Document("_id", 0)//
+				.append("city", //
+					new Document("$toLower", "$city")//
 				)//
-			).into(new ArrayList<Document>());
+				.append("pop", 1)//
+				.append("state", 1)//
+				.append("zip", "$_id")//
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
-	System.out.println("--- Query $max: groupby State, máx Population ---");
-	System.out.println("db.zips.aggregate([{$group:{_id:'$state', max_pop:{$max:'$pop'}}}]);\n");
+	System.out.println("--- Query $project ---");
+	System.out.println("db.zips.aggregate([{$project:{_id:0,'city':{$toLower:'$city'},pop:1,state:1,'zip':'$_id'}}]);\n");
 	for (Document zipAggregate : results) {
 	    printJson(zipAggregate, false);
 	}

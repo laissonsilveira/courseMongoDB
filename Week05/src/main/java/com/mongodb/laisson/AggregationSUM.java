@@ -33,7 +33,8 @@ public class AggregationSUM {
      * db.zips.aggregate([{$group:{'_id':'$state', population:{'$sum':'$pop'}}}]);
      */
     private static void querySUM() {
-	System.out.println("--- \nQuery SUM: groupby State, sum Pop ---");
+	System.out.println("--- Query $sum: groupby State, sum Pop ---");
+	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', population:{'$sum':'$pop'}}}]);\n");
 
 	List<Document> results = //
 	zips.aggregate(//
