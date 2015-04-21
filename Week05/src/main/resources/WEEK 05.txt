@@ -466,3 +466,155 @@ Lecture 15 - $match
 			        }
 			    }
 			]);
+
+-----------------------------------------------------------------------------------
+
+Lecture 16 - $sort
+
+- disk and memory based: 100mb
+- before or after the grouping stage
+	
+	MONGO:
+		db.zips.aggregate([
+		    {
+		        $match:{
+		            state:"NY"
+		        }
+		    },
+		    {
+		        $group:{
+		            _id:"$city",
+		            population:{
+		                $sum:"$pop"
+		            },
+
+		        }
+		    },
+		    {
+		        $project:{
+		            _id:0,
+		            city:"$_id",
+		            population:1,
+
+		        }
+		    },
+		    {
+		        $sort:{
+		            population:-1
+		        }
+		    }
+		]);
+
+	QUIZ:
+		Again, considering the zipcode collection, which has documents that look like this,
+		{
+			"city" : "ACMAR",
+			"loc" : [
+				-86.51557,
+				33.584132
+			],
+			"pop" : 6055,
+			"state" : "AL",
+			"_id" : "35004"
+		}
+
+		Write an aggregation query with just a sort stage to sort by (state, city), both ascending. Assume the collection is called zips.
+
+		R:
+			db.zips.aggregate([
+			    {
+			        $sort:{
+			            state:1,
+			            city:1
+			        }
+			    }
+			]);
+
+-----------------------------------------------------------------------------------
+
+Lecture 17 - $limit and $skip
+
+first $skip and second $limit, but after of $sort
+
+	MONGO:
+		db.zips.aggregate([
+		    {
+		        $match:{
+		            state:"NY"
+		        }
+		    },
+		    {
+		        $group:{
+		            _id:"$city",
+		            population:{
+		                $sum:"$pop"
+		            },
+
+		        }
+		    },
+		    {
+		        $project:{
+		            _id:0,
+		            city:"$_id",
+		            population:1,
+
+		        }
+		    },
+		    {
+		        $sort:{
+		            population:-1
+		        }
+		    },
+		    {
+		        $skip:10
+		    },
+		    {
+		        $limit:5
+		    }
+		]);
+
+	QUIZ:
+		Suppose you change the order of skip and limit in the query shown in the lesson, to look like this:
+			
+			db.zips.aggregate([
+			    {
+			        $match:{
+			            state:"NY"
+			        }
+			    },
+			    {
+			        $group:{
+			            _id:"$city",
+			            population:{
+			                $sum:"$pop"
+			            },
+
+			        }
+			    },
+			    {
+			        $project:{
+			            _id:0,
+			            city:"$_id",
+			            population:1,
+
+			        }
+			    },
+			    {
+			        $sort:{
+			            population:-1
+			        }
+			    },
+			    {
+			        $limit:5
+			    },
+			    {
+			        $skip:10
+			    }
+			]);
+
+			How many documents do you think will be in the result set?
+
+				10
+				5
+				0 √: pq trouxe somente 5 registro e depois pulou 10 registro, chegando ao 0
+				100

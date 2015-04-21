@@ -27,28 +27,28 @@ public class AggregationPROJECT {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryProject();
+	queryPROJECT();
     }
 
     /**
      * db.zips.aggregate([{$project:{_id:0,'city':{$toLower:'$city'},pop:1,state:1,'zip':'$_id'}}]);
      */
-    private static void queryProject() {
+    private static void queryPROJECT() {
 
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$project", //
-			new Document("_id", 0)//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$project", //
+					new Document("_id", 0)//
 				.append("city", //
 					new Document("$toLower", "$city")//
+					)//
+					.append("pop", 1)//
+					.append("state", 1)//
+					.append("zip", "$_id")//
+					)//
 				)//
-				.append("pop", 1)//
-				.append("state", 1)//
-				.append("zip", "$_id")//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+			).into(new ArrayList<Document>());
 
 	System.out.println("--- Query $project ---");
 	System.out.println("db.zips.aggregate([{$project:{_id:0,'city':{$toLower:'$city'},pop:1,state:1,'zip':'$_id'}}]);\n");

@@ -9,6 +9,7 @@ import java.util.List;
 import org.bson.Document;
 
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Sorts;
 import com.mongodb.laisson.util.ConnectionBase;
 
 /**
@@ -17,7 +18,7 @@ import com.mongodb.laisson.util.ConnectionBase;
  *         laisson.r.silveira@gmail.com
  *         Apr 20, 2015
  */
-public class AggregationMATCH {
+public class AggregationSORT {
 
     /**
      * resources\zips.json
@@ -27,7 +28,7 @@ public class AggregationMATCH {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryMATCH();
+	querySORT();
     }
 
     /**
@@ -36,7 +37,7 @@ public class AggregationMATCH {
      * {$group:{_id:"$city",population:{$sum:"$pop"},zip_codes:{$addToSet:"$_id"}}},
      * {$project:{_id:0,city:"$_id",population:1,zip_codes:1}}]);
      */
-    private static void queryMATCH() {
+    private static void querySORT() {
 
 	Document match = new Document("$match", //
 		new Document("state", "NY")//
@@ -47,21 +48,24 @@ public class AggregationMATCH {
 			.append("population", //
 				new Document("$sum", "$pop")//
 			)//
-		.append("zip_codes", //
-			new Document("$addToSet", "$_id")//
+			.append("zip_codes", //
+				new Document("$addToSet", "$_id")//
 			)//
-		);//
+	);//
 
 	Document project = new Document("$project", //
 		new Document("_id", 0)//
 			.append("city", "$_id")//
-			.append("population", 1)//
-			.append("zip_codes", 1));//
+	.append("population", 1)//
+	.append("zip_codes", 1));//
 
-	List<Document> results = zips.aggregate(Arrays.asList(match, group, project)).into(new ArrayList<Document>());
+	Document sort = new Document("$sort", Sorts.descending("population"));
 
-	System.out.println("--- Query $match, $group and $project ---");
-	System.out.println("db.zips.aggregate([" + "{$match:{state:'NY'}},"
+	List<Document> results = zips.aggregate(Arrays.asList(match, group, project, sort)).into(new ArrayList<Document>());
+
+	System.out.println("--- Query $match, $group, $project and $sort ---");
+	System.out.println("db.zips.aggregate(["//
+		+ "{$match:{state:'NY'}},"
 		+ "{$group:{_id:'$city',population:{$sum:'$pop'},zip_codes:{$addToSet:'$_id'}}},"
 		+ "{$project:{_id:0,city:'$_id',population:1,zip_codes:1}}]);\n");
 	for (Document zipAggregate : results) {

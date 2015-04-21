@@ -24,26 +24,26 @@ public class AggregationADDTOSET {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryAddToSet();
+	queryADDTOSET();
     }
 
     /**
      * db.zips.aggregate([{$group:{"_id":"$state", "cityes":{"$addToSet":"$_id"}}}]);
      */
     @SuppressWarnings("unchecked")
-    private static void queryAddToSet() {
+    private static void queryADDTOSET() {
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
 				.append("cityes", //
 					new Document("$addToSet", "$city")//
-				)//
 					)//
-				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
 	System.out.println("--- Query $addToSet: groupby State, addToSet city ---");
 	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', 'cityes':{'$addToSet':'$_city'}}}]);\n");

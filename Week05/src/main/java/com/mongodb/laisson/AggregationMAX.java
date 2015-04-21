@@ -27,25 +27,25 @@ public class AggregationMAX {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryMin();
+	queryMAX();
     }
 
     /**
      * db.zips.aggregate([{$group:{_id:"$state", max_pop:{$max:"$pop"}}}]);
      */
-    private static void queryMin() {
+    private static void queryMAX() {
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
 				.append("max_pop", //
 					new Document("$max", "$pop")//
-					)//
-					)//
 				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
 	System.out.println("--- Query $max: groupby State, máx Population ---");
 	System.out.println("db.zips.aggregate([{$group:{_id:'$state', max_pop:{$max:'$pop'}}}]);\n");

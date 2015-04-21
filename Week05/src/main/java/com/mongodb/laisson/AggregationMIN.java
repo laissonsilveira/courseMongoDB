@@ -27,25 +27,25 @@ public class AggregationMIN {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryMin();
+	queryMIN();
     }
 
     /**
      * db.zips.aggregate([{$group:{_id:"$state", max_pop:{$min:"$pop"}}}]);
      */
-    private static void queryMin() {
+    private static void queryMIN() {
 
 	List<Document> results = //
-		zips.aggregate(//
-			Arrays.asList(//
-				new Document("$group", //
-					new Document("_id", "$state")//
+	zips.aggregate(//
+		Arrays.asList(//
+		new Document("$group", //
+			new Document("_id", "$state")//
 				.append("max_pop", //
 					new Document("$min", "$pop")//
-					)//
-					)//
 				)//
-			).into(new ArrayList<Document>());
+		)//
+		)//
+	).into(new ArrayList<Document>());
 
 	System.out.println("--- Query $min: groupby State, min Population ---");
 	System.out.println("db.zips.aggregate([{$group:{_id:'$state', max_pop:{$min:'$pop'}}}]);\n");

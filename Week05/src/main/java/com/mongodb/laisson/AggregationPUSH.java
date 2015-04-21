@@ -24,26 +24,26 @@ public class AggregationPUSH {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryPush();
+	queryPUSH();
     }
 
     /**
      * db.zips.aggregate([{$group:{"_id":"$state", "cityes":{"$push":"$_city"}}}]);
      */
     @SuppressWarnings("unchecked")
-    private static void queryPush() {
+    private static void queryPUSH() {
 
 	List<Document> results = //
-	zips.aggregate(//
-		Arrays.asList(//
-		new Document("$group", //
-			new Document("_id", "$state")//
+		zips.aggregate(//
+			Arrays.asList(//
+				new Document("$group", //
+					new Document("_id", "$state")//
 				.append("cityes", //
 					new Document("$push", "$city")//
+					)//
+					)//
 				)//
-		)//
-		)//
-	).into(new ArrayList<Document>());
+			).into(new ArrayList<Document>());
 
 	System.out.println("--- Query $push: groupby State, push city ---");
 	System.out.println("db.zips.aggregate([{$group:{'_id':'$state', 'cityes':{'$push':'$_city'}}}]);\n");
