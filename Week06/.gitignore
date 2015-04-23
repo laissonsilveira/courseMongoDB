@@ -1,0 +1,6 @@
+/.project
+/target/
+/.settings/
+/.classpath
+*DS_Store
+Week06.iml
