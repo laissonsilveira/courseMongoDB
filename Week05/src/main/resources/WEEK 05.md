@@ -618,3 +618,401 @@ first $skip and second $limit, but after of $sort
 				5
 				0 √: pq trouxe somente 5 registro e depois pulou 10 registro, chegando ao 0
 				100
+
+-----------------------------------------------------------------------------------
+
+Lecture 18 - $first and $last
+
+	MONGO:
+		db.zips.aggregate([
+		    /* get the population of every city in every state */    {
+		        $group:{
+		            _id:{
+		                state:"$state",
+		                city:"$city"
+		            },
+		            population:{
+		                $sum:"$pop"
+		            },
+
+		        }
+		    },
+		    /* sort by state,
+		    population */    {
+		        $sort:{
+		            "_id.state":1,
+		            "population":-1
+		        }
+		    },
+		    /* group by state,
+		    get the first item in each group */    {
+		        $group:{
+		            _id:"$_id.state",
+		            city:{
+		                $first:"$_id.city"
+		            },
+		            population:{
+		                $first:"$population"
+		            }
+		        }
+		    },
+		    /* now sort by state again */    {
+		        $sort:{
+		            "_id":1
+		        }
+		    }
+		]);
+
+	QUIZ:
+		Given the following collection:
+			> db.fun.find()
+			{ "_id" : 0, "a" : 0, "b" : 0, "c" : 21 }
+			{ "_id" : 1, "a" : 0, "b" : 0, "c" : 54 }
+			{ "_id" : 2, "a" : 0, "b" : 1, "c" : 52 }
+			{ "_id" : 3, "a" : 0, "b" : 1, "c" : 17 }
+			{ "_id" : 4, "a" : 1, "b" : 0, "c" : 22 }
+			{ "_id" : 5, "a" : 1, "b" : 0, "c" : 5 }
+			{ "_id" : 6, "a" : 1, "b" : 1, "c" : 87 }
+			{ "_id" : 7, "a" : 1, "b" : 1, "c" : 97 }
+		
+		What would be the value of c in the result from this aggregation query
+		
+		db.fun.aggregate([
+		    {
+		        $match:{
+		            a:0
+		        }
+		    },
+		    {
+		        $sort:{
+		            c:-1
+		        }
+		    },
+		    {
+		        $group:{
+		            _id:"$a",
+		            c:{
+		                $first:"$c"
+		            }
+		        }
+		    }
+		]);
+
+		R:
+			21
+			54 √
+			97
+			5
+
+-----------------------------------------------------------------------------------
+
+Lecture 19 and 20 - $unwind
+
+- Separa em novos documentos para cada item de um array
+
+{a:1, b:2, c:['aaa','bbb','ccc']}
+
+$unwid:"$c":
+	{a:1, b:2, c:'aaa'}
+	{a:1, b:2, c:'bbb'}
+	{a:1, b:2, c:'ccc'}
+
+----
+Other Example:
+	db.items.insert({_id:'nail', 'attributes':['hard', 'shiny', 'pointy', 'thin']});
+	db.items.insert({_id:'hammer', 'attributes':['heavy', 'black', 'blunt']});
+	db.items.insert({_id:'screwdriver', 'attributes':['long', 'black', 'flat']});
+	db.items.insert({_id:'rock', 'attributes':['heavy', 'rough', 'roundish']});
+	
+	db.items.aggregate([{$unwind:"$attributes"}]);
+----
+
+	MONGO:
+		db.posts.aggregate([
+		    /* unwind by tags */    {
+		        "$unwind":"$tags"
+		    },
+		    /* now group by tags,
+		    counting each tag */    {
+		        "$group":{
+		            "_id":"$tags",
+		            "count":{
+		                $sum:1
+		            }
+		        }
+		    },
+		    /* sort by popularity */    {
+		        "$sort":{
+		            "count":-1
+		        }
+		    },
+		    /* show me the top 10 */    {
+		        "$limit":10
+		    },
+		    /* change the name of _id to be tag */    {
+		        "$project":{
+		            _id:0,
+		            'tag':'$_id',
+		            'count':1
+		        }
+		    }
+		]);
+
+		db.posts.aggregate([{"$unwind":"$tags"},{"$group":{"_id":"$tags","count":{$sum:1}}},{"$sort":{"count":-1}},{"$limit":10},{"$project":{_id:0,'tag':'$_id','count':1}}]);
+
+	QUIZ:
+		Suppose you have the following collection:
+			db.people.find()
+			{ "_id" : "Barack Obama", "likes" : [ "social justice", "health care", "taxes" ] }
+			{ "_id" : "Mitt Romney", "likes" : [ "a balanced budget", "corporations", "binders full of women" ] }
+		
+		And you unwind the "likes" array of each document. How many documents will you wind up with?
+
+		R:
+			2
+			4
+			6 √
+			9
+
+		Which grouping operator will enable to you to reverse the effects of an unwind?
+
+		R:
+			$sum
+			$addToSet
+			$push √
+			$first
+
+-----------------------------------------------------------------------------------
+
+Lecture 21 - Double $unwind
+
+db.inventory.insert({'name':"Polo Shirt", 'sizes':["Small", "Medium", "Large"], 'colors':['navy', 'white', 'orange', 'red']})
+db.inventory.insert({'name':"T-Shirt", 'sizes':["Small", "Medium", "Large", "X-Large"], 'colors':['navy', "black",  'orange', 'red']})
+db.inventory.insert({'name':"Chino Pants", 'sizes':["32x32", "31x30", "36x32"], 'colors':['navy', 'white', 'orange', 'violet']})
+
+MONGO:
+	db.inventory.aggregate([
+	    {$unwind: "$sizes"},
+	    {$unwind: "$colors"},
+	    {$group: 
+	     {
+		'_id': {'size':'$sizes', 'color':'$colors'},
+		'count' : {'$sum':1}
+	     }
+	    }
+	]);
+
+	Reversing double unwind 01:
+		db.inventory.aggregate([
+		    {$unwind: "$sizes"},
+		    {$unwind: "$colors"},
+		    {$group: 
+		     {
+			'_id': "$name",
+			 'sizes': {$addToSet: "$sizes"},
+			 'colors': {$addToSet: "$colors"},
+		     }
+		    }
+		]);
+
+	Reversing double unwind 02:
+		db.inventory.aggregate([
+		    {$unwind: "$sizes"},
+		    {$unwind: "$colors"},
+		    /* create the color array */
+		    {$group: 
+		     {
+			'_id': {name:"$name",size:"$sizes"},
+			 'colors': {$push: "$colors"},
+		     }
+		    },
+		    /* create the size array */
+		    {$group: 
+		     {
+			'_id': {'name':"$_id.name",
+				'colors' : "$colors"},
+			 'sizes': {$push: "$_id.size"}
+		     }
+		    },
+		    /* reshape for beauty */
+		    {$project: 
+		     {
+			 _id:0,
+			 "name":"$_id.name",
+			 "sizes":1,
+			 "colors": "$_id.colors"
+		     }
+		    }
+		]);
+
+	QUIZ:
+		Can you reverse the effects of a double unwind (2 unwinds in a row) in our inventory collection (shown in the lesson ) with the $push operator?
+		R:
+			Yes √
+			No
+
+-----------------------------------------------------------------------------------
+
+Lecture 22 - Mapping between SQL and Aggregation 
+
+SQL Terms, Functions, and Concepts	MongoDB Aggregation Operators
+
+WHERE		$match
+GROUP BY	$group
+HAVING		$match
+SELECT		$project
+ORDER BY	$sort
+LIMIT		$limit
+SUM()		$sum
+COUNT()		$sum
+join		No direct corresponding operator; 
+			however, the $unwind operator allows for somewhat similar functionality, 
+			but with fields embedded within the document.
+
+Examples: http://docs.mongodb.org/manual/reference/sql-aggregation-comparison/#examples
+
+-----------------------------------------------------------------------------------
+
+Lecture 24 - Limitations of the Aggregation Framework 
+
+- 100mb limit for pipeline stages
+- 16mb limit by default in python
+- Sharded: group by, sort, ou quaer coisa que olhe todos os resultados serão trazido para o primeiro fragmento
+	map/reduce don't recommend
+
+-----------------------------------------------------------------------------------
+
+HOMEWORK 5.1
+
+Finding the most frequent author of comments on your blog
+In this assignment you will use the aggregation framework to find the most frequent author of comments on your blog. 
+
+R:
+	Kayce Kenyon
+	Devorah Smartt
+	Gisela Levin √
+	Brittny Warwick
+	Tamika Schildgen
+	Mariette Batdorf
+
+	db.posts.aggregate([{"$unwind":"$comments"},{"$group":{"_id":"$comments.author", "count":{"$sum":1}}},{"$sort":{"count":-1}},{"$limit":5}]);
+
+-----------------------------------------------------------------------------------
+
+HOMEWORK 5.2
+
+Please calculate the average population of cities in California (abbreviation CA) and New York (NY) (taken together) with populations over 25,000. 
+
+For this problem, assume that a city name that appears in more than one state represents two separate cities. 
+
+Please round the answer to a whole number. 
+Hint: The answer for CT and NJ (using this data set) is 38177. 
+
+Please note:
+Different states might have the same city name.
+A city might have multiple zip codes.
+
+R:
+	44805 √
+	55921
+	67935
+	71819
+	82426
+	93777
+
+-----------------------------------------------------------------------------------
+
+HOMEWORK 5.3
+
+Who's the easiest grader on campus?
+A set of grades are loaded into the grades collection. 
+
+The documents look like this:
+{
+	"_id" : ObjectId("50b59cd75bed76f46522c392"),
+	"student_id" : 10,
+	"class_id" : 5,
+	"scores" : [
+		{
+			"type" : "exam",
+			"score" : 69.17634380939022
+		},
+		{
+			"type" : "quiz",
+			"score" : 61.20182926719762
+		},
+		{
+			"type" : "homework",
+			"score" : 73.3293624199466
+		},
+		{
+			"type" : "homework",
+			"score" : 15.206314042622903
+		},
+		{
+			"type" : "homework",
+			"score" : 36.75297723087603
+		},
+		{
+			"type" : "homework",
+			"score" : 64.42913107330241
+		}
+	]
+}
+There are documents for each student (student_id) across a variety of classes (class_id). Note that not all students in the same class have the same exact number of assessments. Some students have three homework assignments, etc. 
+
+Your task is to calculate the class with the best average student performance. This involves calculating an average for each student in each class of all non-quiz assessments and then averaging those numbers to get a class average. To be clear, each student's average includes only exams and homework grades. Don't include their quiz scores in the calculation. 
+
+What is the class_id which has the highest average student performance? 
+
+Hint/Strategy: You need to group twice to solve this problem. You must figure out the GPA that each student has achieved in a class and then average those numbers to get a class average. After that, you just need to sort. The class with the lowest average is the class with class_id=2. Those students achieved a class average of 37.6 
+
+R:
+	8
+	9
+	1 √
+	5
+	7
+	0
+	6
+
+-----------------------------------------------------------------------------------
+
+HOMEWORK 5.4
+
+Removing Rural Residents
+
+In this problem you will calculate the number of people who live in a zip code in the US where the city starts with a digit. We will take that to mean they don't really live in a city. Once again, you will be using the zip code collection, which you will find in the 'handouts' link in this page. Import it into your mongod using the following command from the command line:
+
+> mongoimport -d test -c zips --drop zips.json
+If you imported it correctly, you can go to the test database in the mongo shell and conform that
+
+> db.zips.count()
+yields 29,467 documents.
+
+The project operator can extract the first digit from any field. For example, to extract the first digit from the city field, you could write this query:
+
+db.zips.aggregate([
+    {$project: 
+     {
+	first_char: {$substr : ["$city",0,1]},
+     }	 
+   }
+])
+Using the aggregation framework, calculate the sum total of people who are living in a zip code where the city starts with a digit. Choose the answer below.
+
+You will need to probably change your projection to send more info through than just that first character. Also, you will need a filtering step to get rid of all documents where the city does not start with a digital (0-9).
+
+Note: When you mongoimport the data, you will probably see a few duplicate key errors; this is to be expected, and will not prevent the mongoimport from working. There is also an issue with MongoDB 3.0.2 where it claims that 0 documents were mongoimported, when in fact there were 29,467 documents imported. You can verify this for yourself by going into the shell and counting the documents in the "test.zips" collection.
+
+R:
+
+	298015 √
+	345232
+	245987
+	312893
+	158249
+	543282
+
+
+-----------------------------------------------------------------------------------

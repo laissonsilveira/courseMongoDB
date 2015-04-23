@@ -28,7 +28,7 @@ public class AggregationLIMITandSKIP {
     public static void main(String[] args) {
 	zips = ConnectionBase.connect("week05", "zips");
 
-	queryLimitSkip();
+	queryLIMIT_SKIP();
     }
 
     /**
@@ -40,27 +40,27 @@ public class AggregationLIMITandSKIP {
      * {$skip:10},
      * {$limit:5}])
      */
-    private static void queryLimitSkip() {
+    private static void queryLIMIT_SKIP() {
 
 	Document match = new Document("$match", //
 		new Document("state", "NY")//
-		);//
+	);//
 
 	Document group = new Document("$group", //
 		new Document("_id", "$city")//
-	.append("population", //
-		new Document("$sum", "$pop")//
-		)//
-		.append("zip_codes", //
-			new Document("$addToSet", "$_id")//
+			.append("population", //
+				new Document("$sum", "$pop")//
 			)//
-		);//
+			.append("zip_codes", //
+				new Document("$addToSet", "$_id")//
+			)//
+	);//
 
 	Document project = new Document("$project", //
 		new Document("_id", 0)//
-	.append("city", "$_id")//
-			.append("population", 1)//
-			.append("zip_codes", 1));//
+			.append("city", "$_id")//
+	.append("population", 1)//
+	.append("zip_codes", 1));//
 
 	Document sort = new Document("$sort", Sorts.descending("population"));
 
