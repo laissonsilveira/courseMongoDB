@@ -2,12 +2,6 @@
 
 Lecture 02 - Simple Aggregation Example
 
-			TABLE PRODUCTS
-
-NAME | CATEGORY | MANUFACTURER | PRICE
-ipad | 	tablet	|	apple	   | 499
-nexus| cellphone|	samsung	   | 350
-
 SQL:
 
 	SELECT manufacturer, COUNT(*) FROM PRODUCTS GROUP BY manufecturer;
