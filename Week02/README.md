@@ -41,7 +41,7 @@
   <li><a href="https://youtu.be/cKLfVZDs9FU" target="_blank">Blog, User Interface</a></li> 
   <li><a href="/using_mongoproc.pdf" target="_blank">Using MongoProc </a></li>
 </ul>
-
+<hr/>
 <ul>
   <li><a href="#">Homework 01</a></li>
   <li><a href="#">Homework 02</a></li>
