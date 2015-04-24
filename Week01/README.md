@@ -25,7 +25,7 @@
   <li><a href="https://youtu.be/ZjwCzyqKVdY" target="_blank">Blog in Documents</a></li>
   <li><a href="https://youtu.be/6XE3wZCPiZ8" target="_blank">Introduction to Schema Design</a></li>
 </ul>
-
+<hr/>
 <ul>
   <li><a href="#">Homework 01</a></li>
   <li><a href="#">Homework 02</a></li>
