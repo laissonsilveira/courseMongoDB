@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 
 # Andrew Erlichson
