@@ -15,36 +15,38 @@
  *
  */
 
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.MongoClient;
-import com.mongodb.ReadPreference;
-import com.mongodb.ServerAddress;
+import com.mongodb.*;
 
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
 public class ReadPreferenceTest {
     public static void main(String[] args) throws UnknownHostException, InterruptedException {
-        MongoClient client = new MongoClient(Arrays.asList(
-                new ServerAddress("localhost", 27017),
-                new ServerAddress("localhost", 27018),
-                new ServerAddress("localhost", 27019)));
-        client.setReadPreference(ReadPreference.primary());
+	MongoClient client = new MongoClient(Arrays.asList(
+			new ServerAddress("localhost", 27017),
+			new ServerAddress("localhost", 27018),
+			new ServerAddress("localhost", 27019)));
+	client.setReadPreference(ReadPreference.secondary());
 
-        DB db = client.getDB("course");
-        db.setReadPreference(ReadPreference.primary());
-        DBCollection coll = db.getCollection("write.test");
-        coll.setReadPreference(ReadPreference.primaryPreferred());
+	DB db = client.getDB("course");
+	db.setReadPreference(ReadPreference.primary());
+	DBCollection coll = db.getCollection("write.test");
+	coll.setReadPreference(ReadPreference.primaryPreferred());
 
-        DBCursor cursor = coll.find().setReadPreference(ReadPreference.nearest());
+	DBCursor cursor = coll.find().setReadPreference(ReadPreference.nearest());
 	try {
-            while (cursor.hasNext()) {
-                System.out.println(cursor.next());
-            }
-        } finally {
-            cursor.close();
-        }
+	    while (cursor.hasNext()) {
+		System.out.println(cursor.next());
+	    }
+	} finally {
+	    cursor.close();
+	}
+
+	//	MongoDatabase database = client.getDatabase("course");
+	//	final MongoCollection<Document> collection = database.getCollection("write.test");
+	//	List<Document> documents = collection.find().into(new ArrayList<Document>());
+	//	for (Document document : documents) {
+	//	    HelperJson.printJson(document, false);
+	//	}
     }
 }

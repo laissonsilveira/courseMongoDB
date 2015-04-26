@@ -1,0 +1,6 @@
+/.project
+/target/
+/.settings/
+/.classpath
+*DS_Store
+hw6-5.iml
