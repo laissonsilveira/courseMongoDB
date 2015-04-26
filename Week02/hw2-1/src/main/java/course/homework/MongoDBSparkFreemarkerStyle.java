@@ -17,7 +17,6 @@
 package course.homework;
 
 import com.mongodb.MongoClient;
-import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import freemarker.template.Configuration;
