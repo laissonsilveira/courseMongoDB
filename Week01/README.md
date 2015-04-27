@@ -58,5 +58,5 @@ Which of the following are valid JSON documents? Please choose all that apply.
 		√   { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
 		√   {}
 <ul>
-	<li><h3><a href="/Week01/hw1-3">Homework 03</a></h3></li>
+	<li><h3><a href="/Week01/hw1-3/README.md">Homework 03</a></h3></li>
 </ul>
