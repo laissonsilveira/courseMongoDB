@@ -1,4 +1,4 @@
-package course.laissonsilveira;
+package com.mongodb.laissonsilveira;
 
 import java.util.Date;
 import java.util.List;

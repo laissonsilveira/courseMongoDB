@@ -1,4 +1,4 @@
-package course.laissonsilveira;
+package com.mongodb.laissonsilveira;
 
 public class Repository {
 
