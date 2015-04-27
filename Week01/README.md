@@ -30,33 +30,34 @@
 	<li><h3>Homework 01</h3></li>
 </ul>
 
-	Install MongoDB on your computer and run it on the standard port.
+Install MongoDB on your computer and run it on the standard port.
 
-	Download the HW1-1 from the Download Handout link and uncompress it.
+Download the HW1-1 from the Download Handout link and uncompress it.
 
-	Use mongorestore to restore the dump into your running mongod. Do this by opening a terminal window (mac) or cmd window (windows) and navigating to the directory so that you are in the parent directory of the dump directory (if you used the default extraction method, it should be hw1/). 
+Use mongorestore to restore the dump into your running mongod. Do this by opening a terminal window (mac) or cmd window (windows) and navigating to the directory so that you are in the parent directory of the dump directory (if you used the default extraction method, it should be hw1/). 
 
-	Now type:
-		<code>mongorestore dump</code>
+Now type:
+	<code>mongorestore dump</code>
 
-	Note you will need to have your path setup correctly to find mongorestore.
+Note you will need to have your path setup correctly to find mongorestore.
 
-	Next, go into the Mongo shell, perform a findOne on the collection called hw1 in the database m101. That will return one document. Please provide the value corresponding to the "answer" key from the document returned.
+Next, go into the Mongo shell, perform a findOne on the collection called hw1 in the database m101. That will return one document. Please provide the value corresponding to the "answer" key from the document returned.
 
-	R:
-		42
+R:
+	42
+
 <ul>
 	<li><h3>Homework 02</h3></li>
 </ul>
-	Which of the following are valid JSON documents? Please choose all that apply.
+Which of the following are valid JSON documents? Please choose all that apply.
 
-	R:<code>
-			{ "name" : "Fred Flinstone" ; "occupation": "Miner" ; "wife" : "Wilma" }
-			{ "city" = "New York", "population" = 7999034, "boroughs" = ["queens", "manhattan", "staten island", "the bronx", "brooklyn"] }
-		√   { "title" : "Star Wars", "quotes" : [ "Use the Force", "These are not the droids you are looking for" ], "director" : "George Lucas" }
-		√   { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
-		√   {}
-	</code>
+R:<code>
+		{ "name" : "Fred Flinstone" ; "occupation": "Miner" ; "wife" : "Wilma" }
+		{ "city" = "New York", "population" = 7999034, "boroughs" = ["queens", "manhattan", "staten island", "the bronx", "brooklyn"] }
+	√   { "title" : "Star Wars", "quotes" : [ "Use the Force", "These are not the droids you are looking for" ], "director" : "George Lucas" }
+	√   { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
+	√   {}
+</code>
 <ul>
 	<li><h3><a href="/Week01/hw1-3">Homework 03</a></h3></li>
 </ul>
