@@ -43,8 +43,8 @@ Note you will need to have your path setup correctly to find mongorestore.
 
 Next, go into the Mongo shell, perform a findOne on the collection called hw1 in the database m101. That will return one document. Please provide the value corresponding to the "answer" key from the document returned.
 
-R:
-	42
+	R:
+		42
 
 <ul>
 	<li><h3>Homework 02</h3></li>
