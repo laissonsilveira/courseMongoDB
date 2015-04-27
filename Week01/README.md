@@ -29,32 +29,32 @@
 <ul>
   <li><h3>Homework 01</h3></li>
   
-    Install MongoDB on your computer and run it on the standard port.
+    <br>Install MongoDB on your computer and run it on the standard port.
   
-    Download the HW1-1 from the Download Handout link and uncompress it.
+    <br>Download the HW1-1 from the Download Handout link and uncompress it.
     
-    Use mongorestore to restore the dump into your running mongod. Do this by opening a terminal window (mac) or cmd window (windows) and navigating to the directory so that you are in the parent directory of the dump directory (if you used the default extraction method, it should be hw1/). 
+    <br>Use mongorestore to restore the dump into your running mongod. Do this by opening a terminal window (mac) or cmd window (windows) and navigating to the directory so that you are in the parent directory of the dump directory (if you used the default extraction method, it should be hw1/). 
     
-    Now type:
-       <code>mongorestore dump</code>
+    <br>Now type:
+       <br><code>mongorestore dump</code>
     
-    Note you will need to have your path setup correctly to find mongorestore.
+    <br>Note you will need to have your path setup correctly to find mongorestore.
     
-    Next, go into the Mongo shell, perform a findOne on the collection called hw1 in the database m101. That will return one document. Please provide the value corresponding to the "answer" key from the document returned.
+    <br>Next, go into the Mongo shell, perform a findOne on the collection called hw1 in the database m101. That will return one document. Please provide the value corresponding to the "answer" key from the document returned.
   
-    R:
-        42
+    <br>R:
+        <br>42
         
   <li><h3>Homework 02</h3></li>
   
-    Which of the following are valid JSON documents? Please choose all that apply.
+    <br>Which of the following are valid JSON documents? Please choose all that apply.
 
-    R:
-        { "name" : "Fred Flinstone" ; "occupation": "Miner" ; "wife" : "Wilma" }
-        { "city" = "New York", "population" = 7999034, "boroughs" = ["queens", "manhattan", "staten island", "the bronx", "brooklyn"] }
-      √  { "title" : "Star Wars", "quotes" : [ "Use the Force", "These are not the droids you are looking for" ], "director" : "George Lucas" }
-      √  { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
-      √  {}
+    <br>R:<code>
+        <br>{ "name" : "Fred Flinstone" ; "occupation": "Miner" ; "wife" : "Wilma" }
+        <br>{ "city" = "New York", "population" = 7999034, "boroughs" = ["queens", "manhattan", "staten island", "the bronx", "brooklyn"] }
+      <br>√  { "title" : "Star Wars", "quotes" : [ "Use the Force", "These are not the droids you are looking for" ], "director" : "George Lucas" }
+      <br>√  { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
+      <br>√  {}</code>
   
   <li><h3><a href="/Week01/hw1-3">Homework 03</a></h3></li>
 </ul>
