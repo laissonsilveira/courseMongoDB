@@ -28,6 +28,7 @@
 <hr/>
 <ul>
 	<li><h3>Homework 01</h3></li>
+</ul>
 
 		Install MongoDB on your computer and run it on the standard port.
 
@@ -44,9 +45,9 @@
 
 		R:
 			42
-
+<ul>
 	<li><h3>Homework 02</h3></li>
-
+</ul>
 		Which of the following are valid JSON documents? Please choose all that apply.
 
 		R:<code>
@@ -56,6 +57,6 @@
 			√   { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
 			√   {}
 		</code>
-
+<ul>
 	<li><h3><a href="/Week01/hw1-3">Homework 03</a></h3></li>
 </ul>
