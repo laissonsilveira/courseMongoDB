@@ -51,12 +51,13 @@ R:
 </ul>
 Which of the following are valid JSON documents? Please choose all that apply.
 
-R:<code>
-		{ "name" : "Fred Flinstone" ; "occupation": "Miner" ; "wife" : "Wilma" }
-		{ "city" = "New York", "population" = 7999034, "boroughs" = ["queens", "manhattan", "staten island", "the bronx", "brooklyn"] }
-	√   { "title" : "Star Wars", "quotes" : [ "Use the Force", "These are not the droids you are looking for" ], "director" : "George Lucas" }
-	√   { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
-	√   {}
+R:
+<code>
+			{ "name" : "Fred Flinstone" ; "occupation": "Miner" ; "wife" : "Wilma" }
+			{ "city" = "New York", "population" = 7999034, "boroughs" = ["queens", "manhattan", "staten island", "the bronx", "brooklyn"] }
+		√   { "title" : "Star Wars", "quotes" : [ "Use the Force", "These are not the droids you are looking for" ], "director" : "George Lucas" }
+		√   { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
+		√   {}
 </code>
 <ul>
 	<li><h3><a href="/Week01/hw1-3">Homework 03</a></h3></li>
