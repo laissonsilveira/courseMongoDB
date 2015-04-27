@@ -2,18 +2,21 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mongodb.laissonsilveira</groupId>
 	<artifactId>HW3-1</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Homework3.1</name>
+    <packaging>jar</packaging>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <name>M101J Homework 01</name>
+    <url>http://maven.apache.org</url>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-	</dependencies>
+    <parent>
+        <artifactId>Week03</artifactId>
+        <groupId>com.mongodb.laissonsilveira</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
 </project>

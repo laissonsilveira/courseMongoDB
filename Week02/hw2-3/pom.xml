@@ -7,18 +7,18 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Homework2-3</name>
+    <name>M101J Homework 03</name>
     <url>http://maven.apache.org</url>
+
+    <parent>
+        <artifactId>Week02</artifactId>
+        <groupId>com.mongodb.laissonsilveira</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver</artifactId>
-            <version>3.0.0-rc0</version>
-        </dependency>
-    </dependencies>
 </project>
