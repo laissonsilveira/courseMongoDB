@@ -14,4 +14,4 @@ Type the number that appears after the colon into the box below. No spaces, noth
 	R:
 		523258
 
-<a href="../../../blob/master/README.md">Go back to homepage</a>
+<a href="../../blob/master/README.md">Go back to homepage</a>
