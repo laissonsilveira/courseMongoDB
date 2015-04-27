@@ -56,5 +56,5 @@
       √  { "a" : 1, "b" : { "b" : 1, "c" : "foo", "d" : "bar", "e" : [1, 2, 4] } }
       √  {}
   
-  <li><h3><a href="/hw1-3">Homework 03</a></h3></li>
+  <li><h3><a href="/Week01/hw1-3">Homework 03</a></h3></li>
 </ul>
