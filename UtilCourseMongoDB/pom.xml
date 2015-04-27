@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mongodb.laissonsilveira</groupId>
     <artifactId>UtilCourseMongoDB</artifactId>
+    <packaging>jar</packaging>
     <version>1.0</version>
     <name>Util Course MongoDB</name>
 
