@@ -13,6 +13,6 @@
 
 <h3><a href="/Week06/README.md">WEEK 06 - APPLICATION ENGINEERING</a></h3>
 
-<h3>WEEK 07 - CASE STUDIES</h3>
+<h3><a href="/Week07/README.md">WEEK 07 - CASE STUDIES</h3>
 
-<h3>FINAL EXAM</h3>
+<h3><a href="/FinalExam/README.md">FINAL EXAM</h3>
