@@ -33,8 +33,8 @@ Question 02
 	R:
 		db.messages.aggregate([{$unwind:"$headers.To"}, {$group:{"_id":{"from":"$headers.From","to":"$headers.To"},"count":{$sum:1}}},{$sort:{"count":-1}}]);
 
-			susan.mara@enron.com to jeff.dasovich@enron.com
-		√	susan.mara@enron.com to richard.shapiro@enron.com
+		√	susan.mara@enron.com to jeff.dasovich@enron.com
+			susan.mara@enron.com to richard.shapiro@enron.com
 			soblander@carrfut.com to soblander@carrfut.com
 			susan.mara@enron.com to james.steffes@enron.com
 			evelyn.metoyer@enron.com to kate.symes@enron.com
@@ -149,10 +149,10 @@ Question 05
 
 
 			_id_
-			a_1_b_1
-			a_1_c_1
+		√	a_1_b_1
+		√	a_1_c_1
 		√	c_1
-			a_1_b_1_c_-1
+		√	a_1_b_1_c_-1
 
 Question 06
 
@@ -425,7 +425,7 @@ Question 10
 	Check below all the statements that are true about the way MongoDB handled this query.
 
 	R:
-		√	The query used an index to figure out which documents match the find criteria.
+			The query used an index to figure out which documents match the find criteria.
 		√	The query scanned every document in the collection.
 		√	The query avoided sorting the documents because it was able to use an index's ordering.
 			The query returned 120,477 documents.
