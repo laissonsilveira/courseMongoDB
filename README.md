@@ -1,5 +1,3 @@
-# courseMongoDB
-<hr/>
 <h2>Projetos do Curso de <a href="https://www.mongodb.com"> MongoDB</a>:
 <br><b><M101J: MONGODB FOR JAVA DEVELOPERS</b></h2>
 <hr/>
