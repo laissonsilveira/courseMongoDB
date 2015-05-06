@@ -4,6 +4,8 @@ Download hw1-3.zip from Download Handout link, uncompress it, cd into the hw1-3 
 
 <code>mvn compile exec:java -Dexec.mainClass=com.mongodb.SparkHomework</code>
 
+<a href="/src/main/java/com/mongodb/SparkHomework.java">View Code</a>
+
 It requires Maven to be installed correctly to work. If you run it correctly, you should be able to go to localhost:4567 in your browser, or simply curl it.
 If everything is set up correctly, you will see the following:
 
